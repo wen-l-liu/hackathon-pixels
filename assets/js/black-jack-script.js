@@ -9,6 +9,7 @@ let playerAceCount = 0;
 
 let hiddenCard;// Dealer's first card is hidden
 let deck;
+let cardCount;
 
 let canHit = true; //allows the player to draw while yourSum <= 21
 let canStand = true; //allows the player to stand while yourSum <= 21
@@ -157,7 +158,7 @@ function hit() {
     } else {
         playerScore.innerHTML = `You have ${playerSum}`; // Update player score
     }
-    let cardCount = playerCards.childElementCount;
+    cardCount = playerCards.childElementCount;
     console.log('cardCount', cardCount);
 }
 

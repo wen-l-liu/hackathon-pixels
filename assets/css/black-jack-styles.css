@@ -1,7 +1,7 @@
 /* Add a red border to every HTML element */
 * {
 
-    border: .5px solid red;
+    /* border: .5px solid red; */
     justify-items: center;
     align-items: center;
     font-family: "Jersey 10", sans-serif;
@@ -24,18 +24,22 @@ h2 {
     font-weight: 100;
 }
 
+h3,p {
+    text-align: center;
+    margin:8% 0;
+}
 #welcome.pixel-corners {
     position: fixed;
     /* Sit on top of the page content */
     display: block;
     /* Hidden by default */
     width: 50%;
-    height: 50%;
+    /* height: 60%; */
     /* align-self: center; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    align-items: center;
+    justify-items: center;
     /* justify-self: center; */
-    top: 10%;
+    top: 15%;
     background-color: rgb(255, 255, 255);
     /* Black background with opacity */
     z-index: 2;
@@ -44,6 +48,7 @@ h2 {
     /* Add a pointer on hover */
     font-size: 5rem;
     font-weight: 200;
+    overflow:hidden
 }
 
 #game-table {
