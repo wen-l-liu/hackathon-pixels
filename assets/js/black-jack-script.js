@@ -23,11 +23,14 @@ let standBtn = document.getElementById("btn-stand");
 let dealBtn = document.getElementById("btn-deal");
 let resetBtn = document.getElementById("btn-reset");
 
+let welcomeMessage = document.getElementById("welcome")
+
 hitBtn.disabled = true;
 standBtn.disabled = true;
 resetBtn.addEventListener("click", reset);
 
 function dealCard() {
+    welcomeMessage.style.display = "none"; // Hide welcome message when dealing cards
     reset(); // Reset the game state
     dealerCards.innerHTML = '<span id="hidden" class="card-design">&nbsp;</span>'; //placeholder for dealer's hidden card
     buildDeck();
