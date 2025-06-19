@@ -25,12 +25,12 @@ h2 {
     padding: 10px;
     border-radius: 10px;
     min-height: 400px;
-    height: 90vh;
+    height: 80vh;
     width: 90vw;
 
 }
 
-.pixel-corners {
+#game-table.pixel-corners {
     clip-path: polygon(0px calc(100% - 64px),
             4px calc(100% - 64px),
             4px calc(100% - 52px),
@@ -140,10 +140,41 @@ h2 {
             4px 64px,
             0px 64px);
 }
+/* card pixel corners */
+.card-row>span {
+    clip-path: polygon(0px calc(100% - 12px),
+            3px calc(100% - 12px),
+            3px calc(100% - 6px),
+            6px calc(100% - 6px),
+            6px calc(100% - 3px),
+            12px calc(100% - 3px),
+            12px 100%,
+            calc(100% - 12px) 100%,
+            calc(100% - 12px) calc(100% - 3px),
+            calc(100% - 6px) calc(100% - 3px),
+            calc(100% - 6px) calc(100% - 6px),
+            calc(100% - 3px) calc(100% - 6px),
+            calc(100% - 3px) calc(100% - 12px),
+            100% calc(100% - 12px),
+            100% 12px,
+            calc(100% - 3px) 12px,
+            calc(100% - 3px) 6px,
+            calc(100% - 6px) 6px,
+            calc(100% - 6px) 3px,
+            calc(100% - 12px) 3px,
+            calc(100% - 12px) 0px,
+            12px 0px,
+            12px 3px,
+            6px 3px,
+            6px 6px,
+            3px 6px,
+            3px 12px,
+            0px 12px);
+}
 
 #player-cards,
 #dealer-cards {
-    height: 120px;
+    min-height: 20vh;
 
 }
 
@@ -160,11 +191,14 @@ h2 {
     border-radius: 5px;
     box-shadow: 0 0 1px #000;
     display: inline-block;
-    height: 106px;
+    /* height: 106px; */
+    /* width: 79px; */
+    width: 15vh;
+    height: 20vh ;
     margin: 0 5px;
     /* position: absolute; */
     /* right: 0; */
-    width: 79px;
+    
 }
 
 .card-row {
