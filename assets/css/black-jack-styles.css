@@ -1,0 +1,300 @@
+/* Add a red border to every HTML element */
+* {
+
+    /* border: .5px solid red; */
+    justify-items: center;
+    align-items: center;
+    font-family: "Jersey 10", sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 3rem;
+    padding: 0;
+    margin: auto 0;
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+h3,p {
+    text-align: center;
+    margin:8% 0;
+}
+#welcome.pixel-corners {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: block;
+    /* Hidden by default */
+    width: 50%;
+    /* height: 60%; */
+    /* align-self: center; */
+    align-items: center;
+    justify-items: center;
+    /* justify-self: center; */
+    top: 15%;
+    background-color: rgb(255, 255, 255);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+    font-size: 5rem;
+    font-weight: 200;
+    overflow:hidden
+}
+
+#game-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #278814;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 400px;
+    height: 80vh;
+    width: 90vw;
+
+}
+
+.pixel-corners {
+    clip-path: polygon(0px calc(100% - 64px),
+            4px calc(100% - 64px),
+            4px calc(100% - 52px),
+            8px calc(100% - 52px),
+            8px calc(100% - 48px),
+            8px calc(100% - 44px),
+            12px calc(100% - 44px),
+            12px calc(100% - 40px),
+            12px calc(100% - 36px),
+            16px calc(100% - 36px),
+            16px calc(100% - 28px),
+            20px calc(100% - 28px),
+            20px calc(100% - 24px),
+            24px calc(100% - 24px),
+            24px calc(100% - 20px),
+            28px calc(100% - 20px),
+            28px calc(100% - 16px),
+            36px calc(100% - 16px),
+            36px calc(100% - 12px),
+            40px calc(100% - 12px),
+            44px calc(100% - 12px),
+            44px calc(100% - 8px),
+            48px calc(100% - 8px),
+            52px calc(100% - 8px),
+            52px calc(100% - 4px),
+            64px calc(100% - 4px),
+            64px 100%,
+            calc(100% - 64px) 100%,
+            calc(100% - 64px) calc(100% - 4px),
+            calc(100% - 52px) calc(100% - 4px),
+            calc(100% - 52px) calc(100% - 8px),
+            calc(100% - 48px) calc(100% - 8px),
+            calc(100% - 44px) calc(100% - 8px),
+            calc(100% - 44px) calc(100% - 12px),
+            calc(100% - 40px) calc(100% - 12px),
+            calc(100% - 36px) calc(100% - 12px),
+            calc(100% - 36px) calc(100% - 16px),
+            calc(100% - 28px) calc(100% - 16px),
+            calc(100% - 28px) calc(100% - 20px),
+            calc(100% - 24px) calc(100% - 20px),
+            calc(100% - 24px) calc(100% - 24px),
+            calc(100% - 20px) calc(100% - 24px),
+            calc(100% - 20px) calc(100% - 28px),
+            calc(100% - 16px) calc(100% - 28px),
+            calc(100% - 16px) calc(100% - 36px),
+            calc(100% - 12px) calc(100% - 36px),
+            calc(100% - 12px) calc(100% - 40px),
+            calc(100% - 12px) calc(100% - 44px),
+            calc(100% - 8px) calc(100% - 44px),
+            calc(100% - 8px) calc(100% - 48px),
+            calc(100% - 8px) calc(100% - 52px),
+            calc(100% - 4px) calc(100% - 52px),
+            calc(100% - 4px) calc(100% - 64px),
+            100% calc(100% - 64px),
+            100% 64px,
+            calc(100% - 4px) 64px,
+            calc(100% - 4px) 52px,
+            calc(100% - 8px) 52px,
+            calc(100% - 8px) 48px,
+            calc(100% - 8px) 44px,
+            calc(100% - 12px) 44px,
+            calc(100% - 12px) 40px,
+            calc(100% - 12px) 36px,
+            calc(100% - 16px) 36px,
+            calc(100% - 16px) 28px,
+            calc(100% - 20px) 28px,
+            calc(100% - 20px) 24px,
+            calc(100% - 24px) 24px,
+            calc(100% - 24px) 20px,
+            calc(100% - 28px) 20px,
+            calc(100% - 28px) 16px,
+            calc(100% - 36px) 16px,
+            calc(100% - 36px) 12px,
+            calc(100% - 40px) 12px,
+            calc(100% - 44px) 12px,
+            calc(100% - 44px) 8px,
+            calc(100% - 48px) 8px,
+            calc(100% - 52px) 8px,
+            calc(100% - 52px) 4px,
+            calc(100% - 64px) 4px,
+            calc(100% - 64px) 0px,
+            64px 0px,
+            64px 4px,
+            52px 4px,
+            52px 8px,
+            48px 8px,
+            44px 8px,
+            44px 12px,
+            40px 12px,
+            36px 12px,
+            36px 16px,
+            28px 16px,
+            28px 20px,
+            24px 20px,
+            24px 24px,
+            20px 24px,
+            20px 28px,
+            16px 28px,
+            16px 36px,
+            12px 36px,
+            12px 40px,
+            12px 44px,
+            8px 44px,
+            8px 48px,
+            8px 52px,
+            4px 52px,
+            4px 64px,
+            0px 64px);
+}
+
+/* card pixel corners */
+.card-row>span {
+    clip-path: polygon(0px calc(100% - 12px),
+            3px calc(100% - 12px),
+            3px calc(100% - 6px),
+            6px calc(100% - 6px),
+            6px calc(100% - 3px),
+            12px calc(100% - 3px),
+            12px 100%,
+            calc(100% - 12px) 100%,
+            calc(100% - 12px) calc(100% - 3px),
+            calc(100% - 6px) calc(100% - 3px),
+            calc(100% - 6px) calc(100% - 6px),
+            calc(100% - 3px) calc(100% - 6px),
+            calc(100% - 3px) calc(100% - 12px),
+            100% calc(100% - 12px),
+            100% 12px,
+            calc(100% - 3px) 12px,
+            calc(100% - 3px) 6px,
+            calc(100% - 6px) 6px,
+            calc(100% - 6px) 3px,
+            calc(100% - 12px) 3px,
+            calc(100% - 12px) 0px,
+            12px 0px,
+            12px 3px,
+            6px 3px,
+            6px 6px,
+            3px 6px,
+            3px 12px,
+            0px 12px);
+}
+
+#player-cards,
+#dealer-cards {
+    min-height: 20vh;
+
+}
+
+.card-area {
+    flex-wrap: wrap;
+}
+
+
+/* card shape and background */
+#player-cards>span,
+#dealer-cards>span {
+    background: #FFF;
+    border: 6px solid #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #000;
+    display: inline-block;
+    /* height: 106px; */
+    /* width: 79px; */
+    width: 8rem;
+    height: 12rem;
+    max-height: 100%;
+    margin: 0 5px;
+    padding-left: 10px;
+    /* position: absolute; */
+    /* right: 0; */
+
+}
+
+.card-row {
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+}
+
+#message {
+    color: white;
+    font-size: 3rem;
+    /* font-weight: bold; */
+    text-align: center;
+    /* background-color:; */
+    padding: 0.5rem;
+    width: 60%;
+    /* height: 30px; */
+}
+
+.score {
+    color: white;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+    text-align: center;
+    padding: 0.5rem;
+    width: 70%;
+}
+
+#hidden.card-design {
+    background: repeating-conic-gradient(from 45deg, #ff4747 0% 25%, #ffffff 0% 50%);
+    background-size: 10px 10px;
+    background-color: #ffffff;
+}
+
+
+.controls button {
+    font-size: 36px;
+    display: inline-block;
+}
+
+/* Animation for the container */
+
+@keyframes smooth-appear {
+
+    to {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+
+.card-row>span {
+    justify-content: center;
+    position: relative;
+    bottom: -100%;
+    opacity: 0;
+    /* transition-delay: 100ms; */
+    animation: smooth-appear 0.5s ease forwards;
+}

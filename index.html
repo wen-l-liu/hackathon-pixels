@@ -1,30 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document title</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap">
-    <title>Whack-A-Mole!</title>
-</head>
-<body>
-    <background>
-        </background-size: cover;>
-    <h1 class="score">SCORE: <span>00</span></h1>
-    <div class="board">
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-    </div>
-    <div class="cursor"></div>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
-    <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+    <div class="starry-bg" id="stars"></div>
+    <header>
+        <h1 class="main-title">🎮Title</h1>
+        <p class="tagline">Subtitle</p>
+    </header>
+
+    <!-- Need to find images for the games listed inside main (4) -->
+    <main class="game-grid">
+        <div class="game-card" onclick="window.location.href='snake.html'">
+            <img src="" alt="">
+            <h2>🐍 Snake Game</h2>
+        </div>
+        <div class="game-card" onclick="window.location.href='blackjack.html'">
+            <img src="" alt="">
+            <h2>🂡 Black Jack</h2>
+        </div>
+        <div class="game-card coming-soon">
+            <img src="" alt="image of whack-a-mole game">
+            <h2>🐹Whack-a-Mole</h2>
+            <p>Coming Soon</p>
+        </div>
+        <div class="game-card coming-soon">
+            <img src="" alt="image of memory card game">
+            <h2>🃏Memory Match</h2>
+            <p>Coming Soon</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with care and love by the top 3 <strong>GAMERS</strong> in the world!</p>
+    </footer>
+    <script>
+
+        // Generated using AI
+
+        const starContainer = document.getElementById('stars');
+
+        // 🌟 Generate 60 twinkling stars
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${1 + Math.random() * 2}s`;
+            starContainer.appendChild(star);
+        }
+
+        // 🌠 Shooting stars every few seconds
+        setInterval(() => {
+            const shootingStar = document.createElement('div');
+            shootingStar.classList.add('shooting-star');
+            shootingStar.style.left = `${Math.random() * 100}vh`;
+            shootingStar.style.top = `-${Math.random() * 500}px`;
+
+            starContainer.appendChild(shootingStar);
+
+            // remove after animation
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 3000);
+        }, 4000); // every 4 seconds
+    </script>
 </body>
+
 </html>

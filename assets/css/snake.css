@@ -1,0 +1,162 @@
+body {
+  background: url(../images/shooting-star.png) no-repeat center center fixed;
+  background-size: cover;
+  image-rendering: pixelated;
+  font-family: 'Courier New', monospace;
+  color: #4B8CDF;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  
+}
+
+h1 {
+  color: #FF694F;
+  text-shadow: 0 0 5px #FF694F, 0 0 10px #FF694F;
+}
+
+#startBtn {
+  padding: 10px 20px;
+  background: #FFD469;
+  color: #0f0f1a;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #FFD469;
+}
+
+canvas {
+  background: #70B2F0;
+  border: 4px solid #FF694F;
+  margin-top: 10px;
+  display: none;
+  image-rendering: pixelated;
+}
+
+#scoreDisplay {
+  margin-top: 15px;
+  display: none;
+  color: #FF694F;
+}
+
+.back {
+  display: block;
+  margin-top: 15px;
+  color: #4B8CDF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+/* Headers, titles, main menu */
+h1, h2, .main-title {
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* Body text, score, button text */
+body, p, button, .score, .tagline {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+}
+
+.main-title {
+  letter-spacing: 2px;
+  font-size: 2rem;
+  color: #FFD469;
+  text-shadow: 0 0 5px #FFD469;
+}
+
+button {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+/* NEW wrapper to center game */
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 1rem;
+}
+
+/* Responsive canvas */
+canvas {
+  width: 90vmin;   /* Scale with viewport */
+  height: 90vmin;
+  max-width: 400px;
+  max-height: 400px;
+  background: #70B2F0;
+  border: 4px solid #FF694F;
+  image-rendering: pixelated;
+  display: none;
+}
+
+/* Responsive text */
+h1, p, #scoreDisplay {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#startBtn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  max-width: 300px;
+  width: 100%;
+}
+
+/* 1. Twinkling star background container */
+.starry-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 2. Mini twinkling stars */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #FFD469;
+  animation: twinkle 2s infinite ease-in-out;
+  opacity: 0.9;
+  border-radius: 50%;
+}
+
+/* Twinkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* 3. Shooting star */
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD469, transparent);
+  animation: shoot 3s linear infinite;
+  opacity: 0.7;
+}
+
+/* Shooting animation */
+@keyframes shoot {
+  0% {
+    transform: translateX(-250%) translateY(0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200vw) translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
