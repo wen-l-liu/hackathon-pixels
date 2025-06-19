@@ -1,0 +1,110 @@
+/* Add a red border to every HTML element */
+* {
+
+    border: 1px solid red;
+    justify-items: center;
+    align-items: center;
+}
+
+body {
+    overflow: hidden;
+}
+
+h1,
+h2 {
+    margin: 10px 0;
+}
+
+#game-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #278814;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 400px;
+    width: 600px;
+
+}
+
+#player-cards,
+#dealer-cards {
+    height: 120px;
+
+}
+
+/* card shape and background */
+#player-cards>span,
+#dealer-cards>span {
+    background: #FFF;
+    border: 6px solid #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #000;
+    display: inline-block;
+    height: 106px;
+    margin: 0 5px;
+    /* position: absolute; */
+    /* right: 0; */
+    width: 79px;
+}
+
+.card-row {
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#message {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    /* background-color:; */
+    padding: 0.5rem;
+    width: 60%;
+    height: 30px;
+}
+
+.score {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem;
+    width: 70%;
+}
+
+#hidden.card-design {
+    background: repeating-conic-gradient(from 45deg, #ff4747 0% 25%, #ffffff 0% 50%);
+    background-size: 10px 10px;
+    background-color: #ffffff;
+}
+
+
+.controls button {
+    font-size: 1.2rem;
+
+}
+
+/* Animation for the container */
+
+@keyframes smooth-appear {
+
+    to {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+
+.card-row>span {
+    justify-content: center;
+    position: relative;
+    bottom: -100%;
+    opacity: 0;
+
+    animation: smooth-appear 1s ease forwards;
+}
