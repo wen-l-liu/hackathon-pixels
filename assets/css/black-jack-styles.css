@@ -1,31 +1,66 @@
 /* Add a red border to every HTML element */
 * {
 
-    border: .5px solid red;
+    /* border: .5px solid red; */
     justify-items: center;
     align-items: center;
+    font-family: "Jersey 10", sans-serif;
 }
 
 body {
     overflow: hidden;
 }
 
-h1,
+h1 {
+    font-weight: 100;
+    font-size: 3rem;
+    padding: 0;
+    margin: auto 0;
+}
+
 h2 {
     margin: 10px 0;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+h3,p {
+    text-align: center;
+    margin:8% 0;
+}
+#welcome.pixel-corners {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: block;
+    /* Hidden by default */
+    width: 50%;
+    /* height: 60%; */
+    /* align-self: center; */
+    align-items: center;
+    justify-items: center;
+    /* justify-self: center; */
+    top: 15%;
+    background-color: rgb(255, 255, 255);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+    font-size: 5rem;
+    font-weight: 200;
+    overflow:hidden
 }
 
 #game-table {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: space-between;
     background-color: #278814;
     padding: 10px;
     border-radius: 10px;
     min-height: 400px;
-    height: 90vh;
+    height: 80vh;
     width: 90vw;
 
 }
@@ -141,9 +176,41 @@ h2 {
             0px 64px);
 }
 
+/* card pixel corners */
+.card-row>span {
+    clip-path: polygon(0px calc(100% - 12px),
+            3px calc(100% - 12px),
+            3px calc(100% - 6px),
+            6px calc(100% - 6px),
+            6px calc(100% - 3px),
+            12px calc(100% - 3px),
+            12px 100%,
+            calc(100% - 12px) 100%,
+            calc(100% - 12px) calc(100% - 3px),
+            calc(100% - 6px) calc(100% - 3px),
+            calc(100% - 6px) calc(100% - 6px),
+            calc(100% - 3px) calc(100% - 6px),
+            calc(100% - 3px) calc(100% - 12px),
+            100% calc(100% - 12px),
+            100% 12px,
+            calc(100% - 3px) 12px,
+            calc(100% - 3px) 6px,
+            calc(100% - 6px) 6px,
+            calc(100% - 6px) 3px,
+            calc(100% - 12px) 3px,
+            calc(100% - 12px) 0px,
+            12px 0px,
+            12px 3px,
+            6px 3px,
+            6px 6px,
+            3px 6px,
+            3px 12px,
+            0px 12px);
+}
+
 #player-cards,
 #dealer-cards {
-    height: 120px;
+    min-height: 20vh;
 
 }
 
@@ -160,16 +227,21 @@ h2 {
     border-radius: 5px;
     box-shadow: 0 0 1px #000;
     display: inline-block;
-    height: 106px;
+    /* height: 106px; */
+    /* width: 79px; */
+    width: 8rem;
+    height: 12rem;
+    max-height: 100%;
     margin: 0 5px;
+    padding-left: 10px;
     /* position: absolute; */
     /* right: 0; */
-    width: 79px;
+
 }
 
 .card-row {
     display: flex;
-    font-size: 2rem;
+    font-size: 3rem;
     justify-content: center;
     align-items: center;
     /* width: 100%; */
@@ -177,19 +249,19 @@ h2 {
 
 #message {
     color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 3rem;
+    /* font-weight: bold; */
     text-align: center;
     /* background-color:; */
     padding: 0.5rem;
     width: 60%;
-    height: 30px;
+    /* height: 30px; */
 }
 
 .score {
     color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
     text-align: center;
     padding: 0.5rem;
     width: 70%;
@@ -203,8 +275,8 @@ h2 {
 
 
 .controls button {
-    font-size: 1.2rem;
-
+    font-size: 36px;
+    display: inline-block;
 }
 
 /* Animation for the container */
@@ -223,6 +295,6 @@ h2 {
     position: relative;
     bottom: -100%;
     opacity: 0;
-
-    animation: smooth-appear 1s ease forwards;
+    /* transition-delay: 100ms; */
+    animation: smooth-appear 0.5s ease forwards;
 }

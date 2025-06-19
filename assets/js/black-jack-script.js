@@ -9,6 +9,7 @@ let playerAceCount = 0;
 
 let hiddenCard;// Dealer's first card is hidden
 let deck;
+let cardCount;
 
 let canHit = true; //allows the player to draw while yourSum <= 21
 let canStand = true; //allows the player to stand while yourSum <= 21
@@ -23,11 +24,14 @@ let standBtn = document.getElementById("btn-stand");
 let dealBtn = document.getElementById("btn-deal");
 let resetBtn = document.getElementById("btn-reset");
 
+let welcomeMessage = document.getElementById("welcome")
+
 hitBtn.disabled = true;
 standBtn.disabled = true;
 resetBtn.addEventListener("click", reset);
 
 function dealCard() {
+    welcomeMessage.style.display = "none"; // Hide welcome message when dealing cards
     reset(); // Reset the game state
     dealerCards.innerHTML = '<span id="hidden" class="card-design">&nbsp;</span>'; //placeholder for dealer's hidden card
     buildDeck();
@@ -149,11 +153,16 @@ function hit() {
     if (reduceAce(playerSum, playerAceCount) >= 21) { //A, J, 8 -> 1 + 10 + 8
         canHit = false;
         stand();
+    } else if (cardCount == 5) { // If player has 5 cards and it's not bust, they auto win
+        canHit = false;
+        stand();
     } else if (playerSum > 21) {
         playerScore.innerHTML = `You have ${playerSum - 10}`; // Update player score after reducing Ace
     } else {
         playerScore.innerHTML = `You have ${playerSum}`; // Update player score
     }
+    cardCount = playerCards.childElementCount;
+    console.log('cardCount', cardCount);
 }
 
 function stand() {
@@ -178,15 +187,19 @@ function stand() {
     if (playerSum > 21) {
         message = "BUST! You Lose!";
     }
-    else if (dealerSum > 21) {
-        message = "You win!";
-    }
     //both you and dealer <= 21
+    else if (cardCount == 5){
+        message = "5 Card Charlie! You Win!";
+    }
     else if (playerSum == dealerSum) {
         message = "Tie!";
     }
-    else if (playerSum == 21) {
+    else if (playerSum == 21 && cardCount == 2) { // Player has blackjack with two cards
+        console.log(cardCount)
         message = "Blackjack! You Win!";
+    }
+    else if (dealerSum > 21) {
+        message = "You win!";
     }
     else if (playerSum > dealerSum) {
         message = "You Win!";
@@ -218,4 +231,10 @@ function reset() {
     canHit = true; // Reset canHit to true for a new game
     canStand = true; // Reset canStand to true for a new game
     dealBtn.disabled = false; // Re-enable deal button
+}
+
+function getSuit(card) {
+    if (card.includes("♠")) {
+        return "Spades";
+    }
 }
