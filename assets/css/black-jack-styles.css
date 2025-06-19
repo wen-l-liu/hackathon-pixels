@@ -204,6 +204,7 @@ h2 {
     /* width: 79px; */
     width: 8rem;
     height: 12rem ;
+    max-height: 100%;
     margin: 0 5px;
     padding-left: 10px;
     /* position: absolute; */

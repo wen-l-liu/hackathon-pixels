@@ -154,6 +154,8 @@ function hit() {
     } else {
         playerScore.innerHTML = `You have ${playerSum}`; // Update player score
     }
+    let cardCount = playerCards.childElementCount;
+    console.log('cardCount', cardCount);
 }
 
 function stand() {
@@ -178,15 +180,16 @@ function stand() {
     if (playerSum > 21) {
         message = "BUST! You Lose!";
     }
-    else if (dealerSum > 21) {
-        message = "You win!";
-    }
     //both you and dealer <= 21
     else if (playerSum == dealerSum) {
         message = "Tie!";
     }
-    else if (playerSum == 21) {
+    else if (playerSum == 21 && cardCount == 2) { // Player has blackjack with two cards
+        console.log(cardCount)
         message = "Blackjack! You Win!";
+    }
+    else if (dealerSum > 21) {
+        message = "You win!";
     }
     else if (playerSum > dealerSum) {
         message = "You Win!";
@@ -218,4 +221,10 @@ function reset() {
     canHit = true; // Reset canHit to true for a new game
     canStand = true; // Reset canStand to true for a new game
     dealBtn.disabled = false; // Re-enable deal button
+}
+
+function getSuit(card) {
+    if (card.includes("♠")) {
+        return "Spades";
+    }
 }
