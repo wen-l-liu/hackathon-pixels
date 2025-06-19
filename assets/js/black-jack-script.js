@@ -153,6 +153,9 @@ function hit() {
     if (reduceAce(playerSum, playerAceCount) >= 21) { //A, J, 8 -> 1 + 10 + 8
         canHit = false;
         stand();
+    } else if (cardCount == 5) { // If player has 5 cards and it's not bust, they auto win
+        canHit = false;
+        stand();
     } else if (playerSum > 21) {
         playerScore.innerHTML = `You have ${playerSum - 10}`; // Update player score after reducing Ace
     } else {
@@ -185,6 +188,9 @@ function stand() {
         message = "BUST! You Lose!";
     }
     //both you and dealer <= 21
+    else if (cardCount == 5){
+        message = "5 Card Charlie! You Win!";
+    }
     else if (playerSum == dealerSum) {
         message = "Tie!";
     }
