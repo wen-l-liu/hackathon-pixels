@@ -32,8 +32,8 @@ function dealCard() {
     dealerCards.innerHTML = '<span id="hidden" class="card-design">&nbsp;</span>'; //placeholder for dealer's hidden card
     buildDeck();
     shuffleDeck();
-    startGame();
     dealBtn.disabled = true; // Disable deal button after dealing cards
+    startGame();
 }
 
 function buildDeck() {
@@ -96,6 +96,11 @@ function startGame() {
     standBtn.disabled = false;
     hitBtn.addEventListener("click", hit);
     standBtn.addEventListener("click", stay);
+    
+    if (playerSum == 21) {
+        canHit = false; // Disable hitting if player has blackjack
+        stay(); // Automatically stand if player has blackjack
+    }
 }
 
 function getValue(card) {
