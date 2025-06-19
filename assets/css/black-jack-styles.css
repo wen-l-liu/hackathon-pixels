@@ -1,7 +1,7 @@
 /* Add a red border to every HTML element */
 * {
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-items: center;
     align-items: center;
 }
