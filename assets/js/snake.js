@@ -28,7 +28,7 @@ function drawGame() {
 let head = { ...snake[0] };
 if (direction === 'LEFT') head.x -= box;
 else if (direction === 'RIGHT') head.x += box;
-else if (direction === 'DO')head.y -= box;
+else if (direction === 'UP')head.y -= box;
 else if (direction === 'DOWN')head.y += box;
 
 
