@@ -47,7 +47,7 @@ function buildDeck() {
             deck.push(value + " " + type); //A-C -> K-C, A-D -> K-D
         }
     }
-    console.log(deck);
+    // console.log(deck);
 }
 
 
@@ -58,7 +58,7 @@ function shuffleDeck() {
         card = deck[i];
         deck[i] = tempCard; // Swap the card with a random card
     }
-    console.log(deck);
+    // console.log(deck);
 
 }
 
@@ -73,13 +73,13 @@ function startGame() {
     let cardDealt = document.createElement("span");
     let card = deck.pop();
     cardDealt.innerHTML = card; // Display the card
-    console.log('card', card);
+    // console.log('card', card);
     dealerSum += getValue(card);
     // dealerScore.innerHTML = dealerSum; // Update dealer score----------------------comment out
     dealerAceCount += checkAce(card);
     dealerCards.append(cardDealt);
 
-    console.log('dealerSum', dealerSum);
+    // console.log('dealerSum', dealerSum);
 
     for (let i = 0; i < 2; i++) {
         let cardDealt = document.createElement("span");
@@ -95,17 +95,17 @@ function startGame() {
     hitBtn.disabled = false;
     standBtn.disabled = false;
     hitBtn.addEventListener("click", hit);
-    standBtn.addEventListener("click", stay);
-    
+    standBtn.addEventListener("click", stand);
+
     if (playerSum == 21) {
         canHit = false; // Disable hitting if player has blackjack
-        stay(); // Automatically stand if player has blackjack
+        stand(); // Automatically stand if player has blackjack
     }
 }
 
 function getValue(card) {
     let data = card.split(" "); // "4-C" -> ["4", "C"]
-    console.log('data', data);
+    // console.log('value', data);
     let value = data[0];
 
     if (isNaN(value)) { //A J Q K
@@ -144,23 +144,25 @@ function hit() {
     playerSum += getValue(card);
     console.log('playerSum', playerSum);
     playerAceCount += checkAce(card);
+    console.log('playerAceCount', playerAceCount);
     playerCards.append(cardDealt);
     if (reduceAce(playerSum, playerAceCount) >= 21) { //A, J, 8 -> 1 + 10 + 8
         canHit = false;
-        stay();
+        stand();
+    } else if (playerSum > 21) {
+        playerScore.innerHTML = `You have ${playerSum - 10}`; // Update player score after reducing Ace
     } else {
-        playerSum = reduceAce(playerSum, playerAceCount);
+        playerScore.innerHTML = `You have ${playerSum}`; // Update player score
     }
-    playerScore.innerHTML = `You have ${playerSum}`; // Update player score
 }
 
-function stay() {
+function stand() {
     //dealer plays if value is less than 17
     while (dealerSum < 17) {
         let cardDealt = document.createElement("span");
         let card = deck.pop();
         cardDealt.innerHTML = card; // Display the card
-        console.log('card',card);
+        console.log('card', card);
         dealerSum += getValue(card);
         dealerAceCount += checkAce(card);
         document.getElementById('dealer-cards').append(cardDealt);

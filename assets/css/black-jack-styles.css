@@ -1,7 +1,7 @@
 /* Add a red border to every HTML element */
 * {
 
-    /* border: 1px solid red; */
+    border: .5px solid red;
     justify-items: center;
     align-items: center;
 }
@@ -18,127 +18,127 @@ h2 {
 #game-table {
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: space-between;
     background-color: #278814;
     padding: 10px;
     border-radius: 10px;
     min-height: 400px;
-    width: 600px;
+    height: 90vh;
+    width: 90vw;
 
 }
 
 .pixel-corners {
-  clip-path: polygon(
-    0px calc(100% - 64px),
-    4px calc(100% - 64px),
-    4px calc(100% - 52px),
-    8px calc(100% - 52px),
-    8px calc(100% - 48px),
-    8px calc(100% - 44px),
-    12px calc(100% - 44px),
-    12px calc(100% - 40px),
-    12px calc(100% - 36px),
-    16px calc(100% - 36px),
-    16px calc(100% - 28px),
-    20px calc(100% - 28px),
-    20px calc(100% - 24px),
-    24px calc(100% - 24px),
-    24px calc(100% - 20px),
-    28px calc(100% - 20px),
-    28px calc(100% - 16px),
-    36px calc(100% - 16px),
-    36px calc(100% - 12px),
-    40px calc(100% - 12px),
-    44px calc(100% - 12px),
-    44px calc(100% - 8px),
-    48px calc(100% - 8px),
-    52px calc(100% - 8px),
-    52px calc(100% - 4px),
-    64px calc(100% - 4px),
-    64px 100%,
-    calc(100% - 64px) 100%,
-    calc(100% - 64px) calc(100% - 4px),
-    calc(100% - 52px) calc(100% - 4px),
-    calc(100% - 52px) calc(100% - 8px),
-    calc(100% - 48px) calc(100% - 8px),
-    calc(100% - 44px) calc(100% - 8px),
-    calc(100% - 44px) calc(100% - 12px),
-    calc(100% - 40px) calc(100% - 12px),
-    calc(100% - 36px) calc(100% - 12px),
-    calc(100% - 36px) calc(100% - 16px),
-    calc(100% - 28px) calc(100% - 16px),
-    calc(100% - 28px) calc(100% - 20px),
-    calc(100% - 24px) calc(100% - 20px),
-    calc(100% - 24px) calc(100% - 24px),
-    calc(100% - 20px) calc(100% - 24px),
-    calc(100% - 20px) calc(100% - 28px),
-    calc(100% - 16px) calc(100% - 28px),
-    calc(100% - 16px) calc(100% - 36px),
-    calc(100% - 12px) calc(100% - 36px),
-    calc(100% - 12px) calc(100% - 40px),
-    calc(100% - 12px) calc(100% - 44px),
-    calc(100% - 8px) calc(100% - 44px),
-    calc(100% - 8px) calc(100% - 48px),
-    calc(100% - 8px) calc(100% - 52px),
-    calc(100% - 4px) calc(100% - 52px),
-    calc(100% - 4px) calc(100% - 64px),
-    100% calc(100% - 64px),
-    100% 64px,
-    calc(100% - 4px) 64px,
-    calc(100% - 4px) 52px,
-    calc(100% - 8px) 52px,
-    calc(100% - 8px) 48px,
-    calc(100% - 8px) 44px,
-    calc(100% - 12px) 44px,
-    calc(100% - 12px) 40px,
-    calc(100% - 12px) 36px,
-    calc(100% - 16px) 36px,
-    calc(100% - 16px) 28px,
-    calc(100% - 20px) 28px,
-    calc(100% - 20px) 24px,
-    calc(100% - 24px) 24px,
-    calc(100% - 24px) 20px,
-    calc(100% - 28px) 20px,
-    calc(100% - 28px) 16px,
-    calc(100% - 36px) 16px,
-    calc(100% - 36px) 12px,
-    calc(100% - 40px) 12px,
-    calc(100% - 44px) 12px,
-    calc(100% - 44px) 8px,
-    calc(100% - 48px) 8px,
-    calc(100% - 52px) 8px,
-    calc(100% - 52px) 4px,
-    calc(100% - 64px) 4px,
-    calc(100% - 64px) 0px,
-    64px 0px,
-    64px 4px,
-    52px 4px,
-    52px 8px,
-    48px 8px,
-    44px 8px,
-    44px 12px,
-    40px 12px,
-    36px 12px,
-    36px 16px,
-    28px 16px,
-    28px 20px,
-    24px 20px,
-    24px 24px,
-    20px 24px,
-    20px 28px,
-    16px 28px,
-    16px 36px,
-    12px 36px,
-    12px 40px,
-    12px 44px,
-    8px 44px,
-    8px 48px,
-    8px 52px,
-    4px 52px,
-    4px 64px,
-    0px 64px
-  );
+    clip-path: polygon(0px calc(100% - 64px),
+            4px calc(100% - 64px),
+            4px calc(100% - 52px),
+            8px calc(100% - 52px),
+            8px calc(100% - 48px),
+            8px calc(100% - 44px),
+            12px calc(100% - 44px),
+            12px calc(100% - 40px),
+            12px calc(100% - 36px),
+            16px calc(100% - 36px),
+            16px calc(100% - 28px),
+            20px calc(100% - 28px),
+            20px calc(100% - 24px),
+            24px calc(100% - 24px),
+            24px calc(100% - 20px),
+            28px calc(100% - 20px),
+            28px calc(100% - 16px),
+            36px calc(100% - 16px),
+            36px calc(100% - 12px),
+            40px calc(100% - 12px),
+            44px calc(100% - 12px),
+            44px calc(100% - 8px),
+            48px calc(100% - 8px),
+            52px calc(100% - 8px),
+            52px calc(100% - 4px),
+            64px calc(100% - 4px),
+            64px 100%,
+            calc(100% - 64px) 100%,
+            calc(100% - 64px) calc(100% - 4px),
+            calc(100% - 52px) calc(100% - 4px),
+            calc(100% - 52px) calc(100% - 8px),
+            calc(100% - 48px) calc(100% - 8px),
+            calc(100% - 44px) calc(100% - 8px),
+            calc(100% - 44px) calc(100% - 12px),
+            calc(100% - 40px) calc(100% - 12px),
+            calc(100% - 36px) calc(100% - 12px),
+            calc(100% - 36px) calc(100% - 16px),
+            calc(100% - 28px) calc(100% - 16px),
+            calc(100% - 28px) calc(100% - 20px),
+            calc(100% - 24px) calc(100% - 20px),
+            calc(100% - 24px) calc(100% - 24px),
+            calc(100% - 20px) calc(100% - 24px),
+            calc(100% - 20px) calc(100% - 28px),
+            calc(100% - 16px) calc(100% - 28px),
+            calc(100% - 16px) calc(100% - 36px),
+            calc(100% - 12px) calc(100% - 36px),
+            calc(100% - 12px) calc(100% - 40px),
+            calc(100% - 12px) calc(100% - 44px),
+            calc(100% - 8px) calc(100% - 44px),
+            calc(100% - 8px) calc(100% - 48px),
+            calc(100% - 8px) calc(100% - 52px),
+            calc(100% - 4px) calc(100% - 52px),
+            calc(100% - 4px) calc(100% - 64px),
+            100% calc(100% - 64px),
+            100% 64px,
+            calc(100% - 4px) 64px,
+            calc(100% - 4px) 52px,
+            calc(100% - 8px) 52px,
+            calc(100% - 8px) 48px,
+            calc(100% - 8px) 44px,
+            calc(100% - 12px) 44px,
+            calc(100% - 12px) 40px,
+            calc(100% - 12px) 36px,
+            calc(100% - 16px) 36px,
+            calc(100% - 16px) 28px,
+            calc(100% - 20px) 28px,
+            calc(100% - 20px) 24px,
+            calc(100% - 24px) 24px,
+            calc(100% - 24px) 20px,
+            calc(100% - 28px) 20px,
+            calc(100% - 28px) 16px,
+            calc(100% - 36px) 16px,
+            calc(100% - 36px) 12px,
+            calc(100% - 40px) 12px,
+            calc(100% - 44px) 12px,
+            calc(100% - 44px) 8px,
+            calc(100% - 48px) 8px,
+            calc(100% - 52px) 8px,
+            calc(100% - 52px) 4px,
+            calc(100% - 64px) 4px,
+            calc(100% - 64px) 0px,
+            64px 0px,
+            64px 4px,
+            52px 4px,
+            52px 8px,
+            48px 8px,
+            44px 8px,
+            44px 12px,
+            40px 12px,
+            36px 12px,
+            36px 16px,
+            28px 16px,
+            28px 20px,
+            24px 20px,
+            24px 24px,
+            20px 24px,
+            20px 28px,
+            16px 28px,
+            16px 36px,
+            12px 36px,
+            12px 40px,
+            12px 44px,
+            8px 44px,
+            8px 48px,
+            8px 52px,
+            4px 52px,
+            4px 64px,
+            0px 64px);
 }
 
 #player-cards,
@@ -146,6 +146,11 @@ h2 {
     height: 120px;
 
 }
+
+.card-area {
+    flex-wrap: wrap;
+}
+
 
 /* card shape and background */
 #player-cards>span,
@@ -167,7 +172,7 @@ h2 {
     font-size: 2rem;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
 }
 
 #message {
