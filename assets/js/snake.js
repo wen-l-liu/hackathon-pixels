@@ -3,6 +3,7 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const scoreSpan = document.getElementById('score');
 const startBtn = document.getElementById('startBtn');
+const eatSound = new Audio('assets/sounds/eating-sound.wav');
 
 const box = 20;
 const rows = canvas.height / box;
@@ -52,12 +53,14 @@ if (snake.some(seg => seg.x === head.x && seg.y === head.y )) {
 
 snake.unshift(head);
 if (head.x === food.x && head.y === food.y) {
+    eatSound.currentTime = 0; // Rewind to start in case it's still playing
+    eatSound.play();          // Play the sound
     score++;
     scoreSpan.innerText = score;
     food = randomFood();
-    } else {
-        snake.pop();
-    }
+} else {
+    snake.pop();
+}
 ctx.fillStyle = '#ff694f';
 ctx.fillRect(food.x, food.y, box, box);
 }
