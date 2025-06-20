@@ -9,13 +9,15 @@
 
 body {
     overflow: hidden;
+    background-image: url(../images/background\ temp.jpg)
 }
 
 h1 {
     font-weight: 100;
-    font-size: 3rem;
+    font-size: 5rem;
     padding: 0;
     margin: auto 0;
+    color: #ffffff;
 }
 
 h2 {
@@ -24,44 +26,43 @@ h2 {
     font-weight: 100;
 }
 
-h3,p {
+h3,
+p {
     text-align: center;
-    margin:8% 0;
+    margin: 8% 0;
 }
+
 #welcome.pixel-corners {
     position: fixed;
     /* Sit on top of the page content */
     display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    left: 0;
+    right: 0;
+    top: 200px;
+    margin: auto;
     /* Hidden by default */
-    width: 50%;
+    width: fit-content;
+    padding: 0 20px;
     /* height: 60%; */
-    /* align-self: center; */
-    align-items: center;
-    justify-items: center;
-    /* justify-self: center; */
-    top: 15%;
+    max-height: 70%;
     background-color: rgb(255, 255, 255);
-    /* Black background with opacity */
     z-index: 2;
-    /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer;
     /* Add a pointer on hover */
     font-size: 5rem;
     font-weight: 200;
-    overflow:hidden
+    overflow: hidden
 }
 
 #game-table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #278814;
+    background-color: #217a19;
     padding: 10px;
     border-radius: 10px;
-    min-height: 400px;
-    height: 80vh;
-    width: 90vw;
+    /* min-height: 400px; */
+    min-width: 890px;
 
 }
 
@@ -210,8 +211,9 @@ h3,p {
 
 #player-cards,
 #dealer-cards {
-    min-height: 20vh;
 
+    min-height: 204px;
+    /* width: 100%; */
 }
 
 .card-area {
@@ -241,21 +243,24 @@ h3,p {
 
 .card-row {
     display: flex;
+    flex-wrap: wrap;
     font-size: 3rem;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
+
 }
 
 #message {
+    display: block;
+    align-content: center;
     color: white;
-    font-size: 3rem;
+    font-size: 4rem;
     /* font-weight: bold; */
     text-align: center;
     /* background-color:; */
-    padding: 0.5rem;
     width: 60%;
-    /* height: 30px; */
+    min-height: 70px;
+    /* background-color: rgb(160, 236, 130); */
 }
 
 .score {
@@ -273,10 +278,22 @@ h3,p {
     background-color: #ffffff;
 }
 
+.red-card {
+    color: #ff4747;
+}
 
 .controls button {
     font-size: 36px;
     display: inline-block;
+    padding: 0 20px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.controls button:hover {
+    /* background: #f3d0d0; */
+    /* color: #fff; */
+    /* box-shadow: 0 2px 8px rgba(110, 0, 0, 0.849); */
+    cursor: pointer;
 }
 
 /* Animation for the container */
