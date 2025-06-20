@@ -41,7 +41,8 @@ function dealCard() {
 }
 
 function buildDeck() {
-    let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    // let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    let values = ["A", "2", "3", "4", "5"];
     let types = ['♠', '♣', '♥', '♦']; // Spades, Clubs, Hearts, Diamonds
     // let types = ["C", "D", "H", "S"];
     deck = [];
@@ -143,7 +144,8 @@ function hit() {
     playerSum += getValue(card);
     playerAceCount += checkAce(card);
     playerCards.append(cardDealt);
-    if (reduceAce(playerSum, playerAceCount) >= 21 && cardCount < 5) { //A, J, 8 -> 1 + 10 + 8
+    cardCount = playerCards.childElementCount;  // Count the number of cards dealt to the player
+    if (reduceAce(playerSum, playerAceCount) >= 21) { //A, J, 8 -> 1 + 10 + 8
         canHit = false;
         stand();
     } else if (cardCount == 5) { // If player has 5 cards and it's not bust, they auto win
@@ -154,42 +156,32 @@ function hit() {
     } else {
         playerScore.innerHTML = `You have ${playerSum}`; // Update player score
     }
-    cardCount = playerCards.childElementCount;
     console.log('cardCount', cardCount);
 }
 
 function stand() {
-    //dealer plays if value is less than 17
-    while (dealerSum < 17) {
-        let cardDealt = document.createElement("span");
-        let card = deck.pop();
-        cardDealt.innerHTML = card; // Display the card
-        getSuit(cardDealt); // Add suit color class
-        dealerSum += getValue(card);
-        dealerAceCount += checkAce(card);
-        document.getElementById('dealer-cards').append(cardDealt);
+    playerSum = reduceAce(playerSum, playerAceCount);
+    if (cardCount != 5 && playerSum <= 21) {
+        dealerPlays(); // Dealer plays after player stands, but does not play if player has 5 card charlie
     }
     dealerSum = reduceAce(dealerSum, dealerAceCount);
-    playerSum = reduceAce(playerSum, playerAceCount);
-
     canHit = false;
     document.getElementById("hidden").classList.remove("card-design"); // Remove the hidden card design
     document.getElementById("hidden").innerHTML = hiddenCard;
-
     let message = "";
     if (playerSum > 21) {
         message = "BUST! You Lose!";
     }
-    //both you and dealer <= 21
-    else if (cardCount == 5) {
-        message = "5 Card Charlie! You Win!";
-    }
-    else if (playerSum == dealerSum) {
-        message = "Tie!";
-    }
     else if (playerSum == 21 && cardCount == 2) { // Player has blackjack with two cards
         console.log(cardCount)
         message = "Blackjack! You Win!";
+    }
+    //both you and dealer <= 21
+    else if (playerSum == dealerSum) {
+        message = "Tie!";
+    }
+    else if (cardCount == 5) {
+        message = "5 Card Charlie! You Win!";
     }
     else if (dealerSum > 21) {
         message = "You win!";
@@ -229,5 +221,20 @@ function reset() {
 function getSuit(card) {
     if (card.innerHTML.includes("♦") || card.innerHTML.includes("♥")) {
         card.classList.add("red-card");
+    }
+}
+
+function dealerPlays() {
+    let dealerCards = document.getElementById("dealer-cards");
+    let dealerCardCount = dealerCards.childElementCount; // Count the number of cards dealt to the dealer
+    //dealer plays if value is less than 17
+    while (dealerSum < 17 && dealerCardCount <= 5) {
+        let cardDealt = document.createElement("span");
+        let card = deck.pop();
+        cardDealt.innerHTML = card; // Display the card
+        getSuit(cardDealt); // Add suit color class
+        dealerSum += getValue(card);
+        dealerAceCount += checkAce(card);
+        dealerCards.append(cardDealt);
     }
 }
