@@ -24,9 +24,10 @@ h2 {
     font-weight: 100;
 }
 
-h3,p {
+h3,
+p {
     text-align: center;
-    margin:8% 0;
+    margin: 8% 0;
 }
 
 #welcome.pixel-corners {
@@ -50,7 +51,7 @@ h3,p {
     /* Add a pointer on hover */
     font-size: 5rem;
     font-weight: 200;
-    overflow:hidden
+    overflow: hidden
 }
 
 #game-table {
