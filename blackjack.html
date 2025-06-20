@@ -16,8 +16,11 @@
     <div id="game-table" class="pixel-corners">
         <!-- <div class="card-area"> -->
             <h2>Dealer</h2>
+            <div id="welcome" class="pixel-corners" onclick="dealCard()">
+                <h3>Welcome to blackjack!</h3>
+                <p>Press Deal to start the game</p>
+            </div>
             <div id="dealer-cards" class="card-row">
-                <div id="welcome" class="pixel-corners"><h3>Welcome to blackjack!</h3><p>Press Deal to start the game</p></div>
             </div>
             <div id="dealer-score" class="score">
                 &nbsp;
@@ -37,7 +40,7 @@
             <button id="btn-deal">Deal</button>
             <button id="btn-hit">Hit</button>
             <button id="btn-stand">Stand</button>
-            <button id="btn-reset">Reset</button>
+            <!-- <button id="btn-reset">Reset</button> -->
         </div>
     </div>
     <script src="assets/js/black-jack-script.js"></script>

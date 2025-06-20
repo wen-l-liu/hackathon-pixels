@@ -217,6 +217,7 @@ function stand() {
 }
 
 function reset() {
+
     playerCards.innerHTML = ""; // Clear player cards
     dealerCards.innerHTML = ""; // resets dealer cards
     document.getElementById("message").innerHTML = ""; // Clear message"";
@@ -231,10 +232,11 @@ function reset() {
     canHit = true; // Reset canHit to true for a new game
     canStand = true; // Reset canStand to true for a new game
     dealBtn.disabled = false; // Re-enable deal button
+    // welcomeMessage.style.display = "block"; // Show welcome message when resetting
 }
 
 function getSuit(card) {
-    if (card.includes("♠")) {
+    if (card.includes("&#9829;")) {
         return "Spades";
     }
 }

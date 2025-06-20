@@ -28,22 +28,24 @@ h3,p {
     text-align: center;
     margin:8% 0;
 }
+
 #welcome.pixel-corners {
     position: fixed;
     /* Sit on top of the page content */
     display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    left: 0;
+    right: 0;
+    top: 120px;
+    margin: auto;
     /* Hidden by default */
     width: 50%;
     /* height: 60%; */
-    /* align-self: center; */
-    align-items: center;
-    justify-items: center;
-    /* justify-self: center; */
-    top: 15%;
+    max-height: 70%;
     background-color: rgb(255, 255, 255);
-    /* Black background with opacity */
     z-index: 2;
-    /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer;
     /* Add a pointer on hover */
     font-size: 5rem;
@@ -52,15 +54,10 @@ h3,p {
 }
 
 #game-table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     background-color: #278814;
     padding: 10px;
     border-radius: 10px;
-    min-height: 400px;
-    height: 80vh;
+    /* min-height: 400px; */
     width: 90vw;
 
 }
@@ -210,8 +207,9 @@ h3,p {
 
 #player-cards,
 #dealer-cards {
-    min-height: 20vh;
 
+    min-height: 204px;
+    /* width: 100%; */
 }
 
 .card-area {
@@ -241,10 +239,11 @@ h3,p {
 
 .card-row {
     display: flex;
+    flex-wrap: wrap;
     font-size: 3rem;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
+
 }
 
 #message {
@@ -255,7 +254,7 @@ h3,p {
     /* background-color:; */
     padding: 0.5rem;
     width: 60%;
-    /* height: 30px; */
+    min-height: 68px;
 }
 
 .score {
@@ -273,6 +272,9 @@ h3,p {
     background-color: #ffffff;
 }
 
+.red-card {
+    color: #ff4747;
+}
 
 .controls button {
     font-size: 36px;
