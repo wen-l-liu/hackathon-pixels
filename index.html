@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <div class="starry-bg" id="stars"></div>
     <header>
@@ -46,32 +48,33 @@
 
         // Generated using AI
 
-const starContainer = document.getElementById('stars');
+        const starContainer = document.getElementById('stars');
 
-  // 🌟 Generate 60 twinkling stars
-  for (let i = 0; i < 60; i++) {
-    const star = document.createElement('div');
-    star.classList.add('star');
-    star.style.top = `${Math.random() * 100}vh`;
-    star.style.left = `${Math.random() * 100}vw`;
-    star.style.animationDuration = `${1 + Math.random() * 2}s`;
-    starContainer.appendChild(star);
-  }
+        // 🌟 Generate 60 twinkling stars
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${1 + Math.random() * 2}s`;
+            starContainer.appendChild(star);
+        }
 
-  // 🌠 Shooting stars every few seconds
-  setInterval(() => {
-    const shootingStar = document.createElement('div');
-    shootingStar.classList.add('shooting-star');
-    shootingStar.style.left = `${Math.random() * 100}vh`;
-    shootingStar.style.top = `-${Math.random() * 500}px`;
+        // 🌠 Shooting stars every few seconds
+        setInterval(() => {
+            const shootingStar = document.createElement('div');
+            shootingStar.classList.add('shooting-star');
+            shootingStar.style.left = `${Math.random() * 100}vh`;
+            shootingStar.style.top = `-${Math.random() * 500}px`;
 
-    starContainer.appendChild(shootingStar);
+            starContainer.appendChild(shootingStar);
 
-    // remove after animation
-    setTimeout(() => {
-      shootingStar.remove();
-    }, 3000);
-  }, 4000); // every 4 seconds
+            // remove after animation
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 3000);
+        }, 4000); // every 4 seconds
     </script>
 </body>
+
 </html>
