@@ -12,8 +12,20 @@
 
 <body>
     <div class="starry-bg" id="stars"></div>
+    <div class="starry-bg">
+  <div class="floating-stars">
+    <!-- dozens of .star elements inside here -->
+    <div class="star" style="top: 10%; left: 20%;"></div>
+    <div class="star" style="top: 30%; left: 70%;"></div>
+    <div class="star" style="top: 50%; left: 40%;"></div>
+    <!-- ... -->
+  </div>
+</div>
+<div class="star" style="top: 10%; left: 20%; animation-duration: 2.5s;"></div>
+<div class="star" style="top: 30%; left: 70%; animation-duration: 3.2s;"></div>
+
     <header>
-        <h1 class="main-title">🎮Title</h1>
+        <h1 class="main-title">🎮The Arcadean</h1>
         <p class="tagline">Subtitle</p>
     </header>
 
@@ -29,7 +41,7 @@
             <h2>🂡BlackJack</h2>
             </div>
 
-            <div class="game-card">
+            <div class="game-card" onclick="window.location.href='whackamole.html'">
                 <img src="" alt="">
                 <h2>🐹Whack-a-Mole</h2>
             </div>
