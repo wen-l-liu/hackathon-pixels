@@ -41,8 +41,8 @@ function dealCard() {
 }
 
 function buildDeck() {
-    // let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-    let values = ["A", "2", "3", "4", "5"];
+    let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    // let values = ["A", "2", "3", "4", "5"];
     let types = ['♠', '♣', '♥', '♦']; // Spades, Clubs, Hearts, Diamonds
     // let types = ["C", "D", "H", "S"];
     deck = [];
