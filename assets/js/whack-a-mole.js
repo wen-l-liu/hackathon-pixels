@@ -12,13 +12,33 @@ function run(){
 
     const img = document.createElement('img')
     img.classList.add('mole')
-    img.src = 'assets/images/mole.1.png'
+    img.src = 'assets/images/mole.png'
 
+    // Add randm chance for star mole
+     const isSpecialMole = Math.random() < 0.3; // 30% chance for a special mole
+    
+    if (isSpecialMole) {
+        img.src = 'assets/images/starmole.png' // Star mole image
+        img.classList.add('star-mole') // Class for styling
+        
+
+    } else {
+        img.src = 'assets/images/mole.png'
+    }
     img.addEventListener('click', () => {
-        score += 10
-        sound.play()
-        scoreEl.textContent = score
-        img.src = ('MOLE WHACKED')
+        // Award 50 points for special mole, 10 for regular mole
+        if (isSpecialMole) {
+            score += 50
+            new Audio("assets/images/crash.mp3").play() //Crash audio
+            scoreEl.textContent = score
+            img.src = 'assets/images/starmole.png' // Change to star mole image
+        } else {
+            score += 10
+            sound.play()
+            scoreEl.textContent = score
+            img.src = 'assets/images/mole.png' // Change to regular mole image
+        }
+        
         clearTimeout(timer)
         setTimeout(() => {
             hole.removeChild(img)
@@ -45,3 +65,12 @@ window.addEventListener('mousedown', () => {
 window.addEventListener('mouseup', () => {
     cursor.classList.remove('active')
 })
+
+// Reset Score Button Functionality
+const resetBtn = document.getElementById('reset-btn');
+if (resetBtn) { // Need to figure why the button does not display before adding listener
+    resetBtn.addEventListener('click', () => {
+        score = 0;
+        scoreEl.textContent = score;
+    });
+}
