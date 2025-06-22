@@ -80,8 +80,8 @@ button {
 canvas {
   width: 90vmin;
   height: 90vmin;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 800px;
+  max-height: 800px;
   background: #A786DF;
   border: 4px solid #ffee00;
   image-rendering: pixelated;
