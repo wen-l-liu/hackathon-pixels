@@ -23,7 +23,7 @@ body {
 
 header {
   padding: 2rem;
-  color: #FF8906;
+  color: #ffee00;
   text-shadow: 2px 2px 0 #000;
 }
 
@@ -38,7 +38,7 @@ header {
 .game-card {
   width: 250px;
   background: #1A1A1A;
-  border: 3px dashed #FF8906;
+  border: 3px dashed #ffee00;
   border-radius: 10px;
   padding: 1rem;
   transition: transform 0.3s;
@@ -83,7 +83,7 @@ footer {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: #FF8906;
+  background: #ffee00;
   animation: twinkle 2s infinite ease-in-out;
   opacity: 0.8;
   border-radius: 50%;
@@ -145,7 +145,7 @@ body, p, button, .score, .tagline {
 .main-title {
   letter-spacing: 2px;
   font-size: 2rem;
-  color: #FF8906;
+  color: #ffee00;
   text-shadow: 0 0 5px #E53170;
 }
 
@@ -154,7 +154,7 @@ button {
   text-transform: uppercase;
   color: #A786DF;
   background-color: #0F0E17;
-  border: 2px solid #FF8906;
+  border: 2px solid #ffee00;
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;

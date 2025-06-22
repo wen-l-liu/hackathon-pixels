@@ -21,7 +21,7 @@ function drawGame() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = i === 0 ? '#FF8906' : '#E53170'; // head and body colors
+        ctx.fillStyle = i === 0 ? '#ffee00' : '#E53170'; // head and body colors
         ctx.fillRect(snake[i].x, snake[i].y, box, box);
     }
 

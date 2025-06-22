@@ -10,8 +10,8 @@ body {
 }
 
 h1 {
-  color: #FF8906;
-  text-shadow: 0 0 5px #FF8906, 0 0 10px #E53170;
+  color: ##ffee00;
+  text-shadow: 0 0 5px #ffee00, 0 0 10px #E53170;
 }
 
 #startBtn {
@@ -27,7 +27,7 @@ h1 {
 
 canvas {
   background: #A786DF;
-  border: 4px solid #FF8906;
+  border: 4px solid #ffee00;
   margin-top: 10px;
   display: none;
   image-rendering: pixelated;
@@ -42,7 +42,7 @@ canvas {
 .back {
   display: block;
   margin-top: 15px;
-  color: #FF8906;
+  color: #ffee00;
   text-decoration: none;
   font-weight: bold;
 }
@@ -59,7 +59,7 @@ body, p, button, .score, .tagline {
 .main-title {
   letter-spacing: 2px;
   font-size: 2rem;
-  color: #FF8906;
+  color: #ffee00;
   text-shadow: 0 0 5px #E53170;
 }
 
@@ -83,7 +83,7 @@ canvas {
   max-width: 400px;
   max-height: 400px;
   background: #A786DF;
-  border: 4px solid #FF8906;
+  border: 4px solid #ffee00;
   image-rendering: pixelated;
   display: none;
 }
@@ -114,7 +114,7 @@ h1, p, #scoreDisplay {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: #FF8906;
+  background: #ffee00;
   animation: twinkle 2s infinite ease-in-out;
   opacity: 0.9;
   border-radius: 50%;
