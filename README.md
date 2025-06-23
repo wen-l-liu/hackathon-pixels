@@ -56,7 +56,7 @@ A playful, retro-inspired palette was chosen to evoke classic arcade vibes while
 
 ### Fonts
 
-- **Main Font:** Press Start 2P (Google Fonts) for a pixel-art, arcade feel.
+- **Main Font:** Jersey 10 (Google Fonts) for a pixel-art, arcade feel.
 - **Fallback:** Arial, sans-serif for compatibility.
 
 ### Wireframes
