@@ -7,7 +7,7 @@ let playerSum = 0;
 let dealerAceCount = 0;
 let playerAceCount = 0;
 
-let hiddenCard;// Dealer's first card is hidden
+let hiddenCard; // Dealer's first card is hidden
 let deck;
 let cardCount;
 
@@ -22,9 +22,9 @@ let dealerScore = document.getElementById("dealer-score");
 let hitBtn = document.getElementById("btn-hit");
 let standBtn = document.getElementById("btn-stand");
 let dealBtn = document.getElementById("btn-deal");
-let resetBtn = document.getElementById("btn-reset");
+// let resetBtn = document.getElementById("btn-reset");
 
-let welcomeMessage = document.getElementById("welcome")
+let welcomeMessage = document.getElementById("welcome");
 
 hitBtn.disabled = true;
 standBtn.disabled = true;
@@ -54,7 +54,6 @@ function buildDeck() {
     }
 }
 
-
 function shuffleDeck() {
     for (let card of deck) {
         let i = Math.floor(Math.random() * deck.length); // (0-1) * 52 => (0-51.9999)
@@ -62,7 +61,6 @@ function shuffleDeck() {
         card = deck[i];
         deck[i] = tempCard; // Swap the card with a random card
     }
-
 }
 
 function startGame() {
@@ -175,7 +173,7 @@ function stand() {
         message = "BUST! You Lose!";
     }
     else if (playerSum == 21 && cardCount == 2) { // Player has blackjack with two cards
-        console.log(cardCount)
+        console.log(cardCount);
         message = "Blackjack! You Win!";
     }
     //both you and dealer <= 21

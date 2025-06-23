@@ -3,7 +3,7 @@ const resetBtn = document.getElementById('reset-btn');
 const cursor = document.querySelector('.cursor');
 const holes = [...document.querySelectorAll('.hole')];
 const scoreEl = document.getElementById('score');
-const board = document.querySelector('.board');
+// const board = document.querySelector('.board');
 
 let score = 0;
 let gameRunning = false;

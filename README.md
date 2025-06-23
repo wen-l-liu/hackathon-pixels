@@ -1,5 +1,5 @@
 # Hackathon Pixels Arcade
-![Preview of Website](assets/documentation/------------)
+![Preview of Website](assets/documentation/home-preview.jpg)
 
 # Introduction
 The Arcadean is a collection of classic browser games built with HTML, CSS, and JavaScript. The site is designed to provide users with fun, interactive options to cure boredom, all within a visually consistent and easy-to-navigate interface. There is no backend functionality, everything runs client-side for instant play.
@@ -128,7 +128,36 @@ To deploy updates:
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) used to ensure valid CSS.
 
 ### JavaScript Validation
-- [Python Tutor](https://pythontutor.com/javascript.html) used to check for code quality and errors.
+- [jshint](https://jshint.com/) used to check for code quality and errors.
+
+![Home Page)](assets/documentation/jshint-home.png)
+
+<details>
+<summary>Black Jack Page</summary>
+
+![Black Jack](assets/documentation/jshint-blackjack.png)
+
+</details>
+<details>
+<summary>Snake Page</summary>
+
+![Snake](assets/documentation/jshint-snake.png)
+
+</details>
+<details>
+<summary>Whack-a-mole</summary>
+
+![Whack-a-mole](assets/documentation/jshint-mole.png)
+
+</details>
+<details>
+<summary>Memory Card Match</summary>
+
+![Memory Card Match](assets/documentation/jshint-memory-card.png)
+
+</details>
+
+Code was validated and updated to resolve syntax issues found.
 
 ### Wave-tool Validation
 Wave-tool Validation is an accessibility evaluation tool that analyses web pages for accessibility issues.
@@ -152,6 +181,12 @@ It checks for problems such as missing alt text, low color contrast, improper he
 <summary>Whack-a-mole</summary>
 
 ![Whack-a-mole](assets/documentation/wave-mole.jpg)
+
+</details>
+<details>
+<summary>Memory Card Match</summary>
+
+![Memory Card Match](assets/documentation/wave-memory-card.jpg)
 
 </details>
 
