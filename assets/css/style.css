@@ -1,18 +1,29 @@
 body {
-  background: url(../images/shooting-star.png) no-repeat center center fixed;
+  background: url(../images/background.png) repeat center center fixed;
+  animation: scrollBg 60s linear infinite;
   background-size: cover;
+  background-color: #0F0E17;
   image-rendering: pixelated;
   font-family: 'Courier New', monospace;
-  color: #4B8CDF;
+  color: #A786DF;
   text-align: center;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+}
+
+@keyframes scrollBg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 0;
+  }
 }
 
 header {
   padding: 2rem;
-  background-color: #1b1b2f;
-  color: #e7bb41;
+  color: #ffee00;
   text-shadow: 2px 2px 0 #000;
 }
 
@@ -26,17 +37,18 @@ header {
 
 .game-card {
   width: 250px;
-  background: #222;
-  border: 3px dashed #44bba4;
+  background: #1A1A1A;
+  border: 3px dashed #ffee00;
   border-radius: 10px;
   padding: 1rem;
   transition: transform 0.3s;
   cursor: pointer;
+  color: #A786DF;
 }
 
 .game-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px #e7bb41;
+  box-shadow: 0 0 15px #F25F4C;
 }
 
 .game-card img {
@@ -53,11 +65,10 @@ header {
 footer {
   padding: 1rem;
   font-size: 0.9rem;
-  background: #1b1b2f;
-  color: #999;
+  background: #1A1A1A;
+  color: #E53170;
 }
 
-/* 1. Twinkling star background container */
 .starry-bg {
   position: fixed;
   top: 0; left: 0;
@@ -68,34 +79,30 @@ footer {
   pointer-events: none;
 }
 
-/* 2. Mini twinkling stars */
 .star {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: #FFD469;
+  background: #ffee00;
   animation: twinkle 2s infinite ease-in-out;
   opacity: 0.8;
   border-radius: 50%;
 }
 
-/* Twinkle animation */
 @keyframes twinkle {
   0%, 100% { opacity: 0.1; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.3); }
 }
 
-/* 3. Shooting star */
 .shooting-star {
   position: absolute;
   width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, #FFD469, transparent);
+  background: linear-gradient(90deg, #F25F4C, transparent);
   animation: shoot 3s linear infinite;
   opacity: 0.7;
 }
 
-/* Shooting animation */
 @keyframes shoot {
   0% {
     transform: translateX(-150%) translateY(0) rotate(45deg);
@@ -110,12 +117,26 @@ footer {
   }
 }
 
-/* Headers, titles, main menu */
+.floating-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: driftStars 120s linear infinite;
+}
+
+@keyframes driftStars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100px, -100px);
+  }
+}
+
 h1, h2, .main-title {
   font-family: 'Press Start 2P', monospace;
 }
 
-/* Body text, score, button text */
 body, p, button, .score, .tagline {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
@@ -124,11 +145,22 @@ body, p, button, .score, .tagline {
 .main-title {
   letter-spacing: 2px;
   font-size: 2rem;
-  color: #FFD469;
-  text-shadow: 0 0 5px #FFD469;
+  color: #ffee00;
+  text-shadow: 0 0 5px #E53170;
 }
 
 button {
   font-size: 1.1rem;
   text-transform: uppercase;
+  color: #A786DF;
+  background-color: #0F0E17;
+  border: 2px solid #ffee00;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #F25F4C;
+  color: #0F0E17;
 }
