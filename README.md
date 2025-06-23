@@ -1,8 +1,8 @@
 # Hackathon Pixels Arcade
-![Preview of Website](assets/documentation/------------)
+![Preview of Website](assets/documentation/home-preview.jpg)
 
 # Introduction
-The Arcadean is a collection of classic browser games built with HTML, CSS, and JavaScript. The site is designed to provide users with fun, interactive options to cure boredom, all within a visually consistent and easy-to-navigate interface. There is no backend functionality—everything runs client-side for instant play.
+The Arcadean is a collection of classic browser games built with HTML, CSS, and JavaScript. The site is designed to provide users with fun, interactive options to cure boredom, all within a visually consistent and easy-to-navigate interface. There is no backend functionality, everything runs client-side for instant play.
 
 ## [Link to Live Website](https://wen-l-liu.github.io/hackathon-pixels/)
 
@@ -36,7 +36,7 @@ This project aims to deliver a simple, accessible arcade of mini-games for users
 - Provide a selection of classic games (Memory Match, Snake, Blackjack, Whack-a-Mole) in one place.
 - Ensure a consistent visual theme and navigation across all games.
 - Make the site fully responsive and accessible.
-- Use only HTML, CSS, and JavaScript—no backend required.
+- Use only HTML, CSS, and JavaScript-no backend required.
 - Optimize for fast loading and smooth gameplay.
 
 ## UX Design
@@ -52,10 +52,11 @@ This project aims to deliver a simple, accessible arcade of mini-games for users
 ### Colour Palette
 
 ![Colour Palette](assets/documentation/pixel-palette.png)
+
 A playful, retro-inspired palette was chosen to evoke classic arcade vibes while maintaining readability and accessibility.
 
 ### Fonts
-
+![Jersey 10 (Google Fonts)](assets/documentation/fonts.png)
 - **Main Font:** Jersey 10 (Google Fonts) for a pixel-art, arcade feel.
 - **Fallback:** Arial, sans-serif for compatibility.
 
@@ -129,9 +130,69 @@ To deploy updates:
 ![alt text](assets/documentation/Screenshot%202025-06-23%20140449.png)
 
 ### JavaScript Validation
-- [ESLint](https://eslint.org/) used to check for code quality and errors.
+- [jshint](https://jshint.com/) used to check for code quality and errors.
 
-All code was validated and updated to resolve any issues found.
+![Home Page)](assets/documentation/jshint-home.png)
+
+<details>
+<summary>Black Jack Page</summary>
+
+![Black Jack](assets/documentation/jshint-blackjack.png)
+
+</details>
+<details>
+<summary>Snake Page</summary>
+
+![Snake](assets/documentation/jshint-snake.png)
+
+</details>
+<details>
+<summary>Whack-a-mole</summary>
+
+![Whack-a-mole](assets/documentation/jshint-mole.png)
+
+</details>
+<details>
+<summary>Memory Card Match</summary>
+
+![Memory Card Match](assets/documentation/jshint-memory-card.png)
+
+</details>
+
+Code was validated and updated to resolve syntax issues found.
+
+### Wave-tool Validation
+Wave-tool Validation is an accessibility evaluation tool that analyses web pages for accessibility issues.
+It checks for problems such as missing alt text, low color contrast, improper heading structure, and other barriers that may affect users with disabilities.The tool helps to improve the accessibility and usability of the website.
+
+![Home Page)](assets/documentation/wave-home.jpg)
+
+<details>
+<summary>Black Jack Page</summary>
+
+![Black Jack](assets/documentation/wave-blackjack.jpg)
+
+</details>
+<details>
+<summary>Snake Page</summary>
+
+![Snake](assets/documentation/wave-snake.jpg)
+
+</details>
+<details>
+<summary>Whack-a-mole</summary>
+
+![Whack-a-mole](assets/documentation/wave-mole.jpg)
+
+</details>
+<details>
+<summary>Memory Card Match</summary>
+
+![Memory Card Match](assets/documentation/wave-memory-card.jpg)
+
+</details>
+
+Code was validated and updated to resolve contrast issues found.
 
 ## References
 - [MDN Web Docs](https://developer.mozilla.org/) for HTML, CSS, and JavaScript documentation.

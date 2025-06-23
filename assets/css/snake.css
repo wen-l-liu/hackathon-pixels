@@ -7,11 +7,19 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  background-color: #0f0e17
 }
 
 h1 {
   color: #ffee00;
   text-shadow: 0 0 5px #ffee00, 0 0 10px #E53170;
+}
+
+#home-link {
+  background: #1A1A1A;
+  color: #FFEE00;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 #startBtn {
@@ -37,6 +45,9 @@ canvas {
   margin-top: 15px;
   display: none;
   color: #E53170;
+  background-color: #0F0E17;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .back {

@@ -1,6 +1,7 @@
 body {
   background: url(../images/background.png) no-repeat center center fixed;
   background-size: cover;
+  background-color: #000144;
   image-rendering: pixelated;
   font-family: 'Courier New', monospace;
   color: #A786DF;
@@ -16,6 +17,13 @@ h1 {
   font-family: 'Press Start 2P', monospace;
   font-size: 2rem;
   margin-top: 2rem;
+}
+
+#home-link {
+  background: #1A1A1A;
+  color: #FFEE00;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 .game-wrapper {
@@ -111,6 +119,9 @@ h1 {
   color: #E53170;
   font-size: 1.2rem;
   font-family: 'VT323', monospace;
+  background-color: #0F0E17;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .back {
