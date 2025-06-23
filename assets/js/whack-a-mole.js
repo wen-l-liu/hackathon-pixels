@@ -1,76 +1,83 @@
-const cursor = document.querySelector('.cursor')
-const holes = [...document.querySelectorAll('.hole')]
-const scoreEl = document.querySelector('.score span')
-let score = 0
+const cursor = document.querySelector('.cursor');
+const holes = [...document.querySelectorAll('.hole')];
+const scoreEl = document.querySelector('.score span');
+let score = 0;
 
-const sound = new Audio("assets/images/whack.mp3")
+// Audio
+const sound = new Audio("assets/images/whack.mp3");
+const crash = new Audio("assets/images/crash.mp3");
 
-function run(){
-    const i = Math.floor(Math.random() * holes.length)
-    const hole = holes[i]
-    let timer = null
+function run() {
+  const i = Math.floor(Math.random() * holes.length);
+  const hole = holes[i];
+  let timer = null;
 
-    const img = document.createElement('img')
-    img.classList.add('mole')
-    img.src = 'assets/images/mole.png'
+  const img = document.createElement('img');
+  img.classList.add('mole');
 
-    // Add randm chance for star mole
-     const isSpecialMole = Math.random() < 0.3; // 30% chance for a special mole
-    
+  const isSpecialMole = Math.random() < 0.3; // 30% chance
+  if (isSpecialMole) {
+    img.src = 'assets/images/starmole.png';
+    img.classList.add('star-mole');
+  } else {
+    img.src = 'assets/images/mole.png';
+  }
+
+  img.addEventListener('click', () => {
     if (isSpecialMole) {
-        img.src = 'assets/images/starmole.png' // Star mole image
-        img.classList.add('star-mole') // Class for styling
-        
-
+      score += 50;
+      crash.play();
+      img.src = 'assets/images/starmole.png';
     } else {
-        img.src = 'assets/images/mole.png'
+      score += 10;
+      sound.play();
+      img.src = 'assets/images/mole.png';
     }
-    img.addEventListener('click', () => {
-        // Award 50 points for special mole, 10 for regular mole
-        if (isSpecialMole) {
-            score += 50
-            new Audio("assets/images/crash.mp3").play() //Crash audio
-            scoreEl.textContent = score
-            img.src = 'assets/images/starmole.png' // Change to star mole image
-        } else {
-            score += 10
-            sound.play()
-            scoreEl.textContent = score
-            img.src = 'assets/images/mole.png' // Change to regular mole image
-        }
-        
-        clearTimeout(timer)
-        setTimeout(() => {
-            hole.removeChild(img)
-            run()
-        }, 500)
-    })
+    scoreEl.textContent = score;
+    clearTimeout(timer);
+    setTimeout(() => {
+      if (hole.contains(img)) hole.removeChild(img);
+      run();
+    }, 500);
+  });
 
-    hole.appendChild(img)
+  hole.appendChild(img);
 
-    timer = setTimeout(() => {
-        hole.removeChild(img)
-        run()
-    }, 1500)
+  timer = setTimeout(() => {
+    if (hole.contains(img)) hole.removeChild(img);
+    run();
+  }, 1500);
 }
-run()
 
+// Start game after the game screen is shown
+document.addEventListener('DOMContentLoaded', () => {
+  const gameScreen = document.getElementById('game-screen');
+  const observer = new MutationObserver(() => {
+    if (gameScreen.style.display === 'flex') {
+      run();
+      observer.disconnect(); // Only run once
+    }
+  });
+  observer.observe(gameScreen, { attributes: true, attributeFilter: ['style'] });
+});
+
+// Cursor movement
 window.addEventListener('mousemove', e => {
-    cursor.style.top = e.pageY + 'px'
-    cursor.style.left = e.pageX + 'px'
-})
+  cursor.style.top = e.pageY + 'px';
+  cursor.style.left = e.pageX + 'px';
+});
 window.addEventListener('mousedown', () => {
-    cursor.classList.add('active')
-})
+  cursor.classList.add('active');
+});
 window.addEventListener('mouseup', () => {
-    cursor.classList.remove('active')
-})
+  cursor.classList.remove('active');
+});
 
-// Reset Score Button Functionality
+// Reset Score
 const resetBtn = document.getElementById('reset-btn');
-if (resetBtn) { // Need to figure why the button does not display before adding listener
-    resetBtn.addEventListener('click', () => {
-        score = 0;
-        scoreEl.textContent = score;
-    });
+if (resetBtn) {
+  resetBtn.addEventListener('click', () => {
+    score = 0;
+    scoreEl.textContent = score;
+  });
 }
