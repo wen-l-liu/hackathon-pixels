@@ -79,6 +79,14 @@ h1 {
     background-color: #010033;
 }
 
+#home-link {
+    background: #1A1A1A;
+    color: #FFEE00;
+    padding: 8px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
 .pixel-corners {
     clip-path: polygon(0px calc(100% - 64px),
             4px calc(100% - 64px),
