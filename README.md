@@ -51,7 +51,7 @@ This project aims to deliver a simple, accessible arcade of mini-games for users
 
 ### Colour Palette
 
-![Colour Palette](assets/documentation/-----------)
+![Colour Palette](assets/documentation/pixel-palette.png)
 A playful, retro-inspired palette was chosen to evoke classic arcade vibes while maintaining readability and accessibility.
 
 ### Fonts
