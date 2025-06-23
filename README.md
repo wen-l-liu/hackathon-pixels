@@ -123,9 +123,11 @@ To deploy updates:
 
 ### HTML Validation
 - [W3C Markup Validation Service](https://validator.w3.org/) used to check for syntax errors and standards compliance.
+![alt text](assets/documentation/Screenshot%202025-06-23%20134046.png)
 
 ### CSS Validation
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) used to ensure valid CSS.
+![alt text](assets/documentation/Screenshot%202025-06-23%20140449.png)
 
 ### JavaScript Validation
 - [jshint](https://jshint.com/) used to check for code quality and errors.
