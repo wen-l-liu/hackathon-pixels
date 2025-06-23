@@ -51,12 +51,12 @@ This project aims to deliver a simple, accessible arcade of mini-games for users
 
 ### Colour Palette
 
-![Colour Palette](assets/documentation/-----------)
+![Colour Palette](assets/documentation/pixel-palette.png)
 A playful, retro-inspired palette was chosen to evoke classic arcade vibes while maintaining readability and accessibility.
 
 ### Fonts
 
-- **Main Font:** Press Start 2P (Google Fonts) for a pixel-art, arcade feel.
+- **Main Font:** Jersey 10 (Google Fonts) for a pixel-art, arcade feel.
 - **Fallback:** Arial, sans-serif for compatibility.
 
 ### Wireframes
