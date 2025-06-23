@@ -128,7 +128,7 @@ To deploy updates:
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) used to ensure valid CSS.
 
 ### JavaScript Validation
-- [Python Tutor](https://pythontutor.com/javascript.html) used to check for code quality and errors.
+- [jshint](https://jshint.com/) used to check for code quality and errors.
 
 ### Wave-tool Validation
 Wave-tool Validation is an accessibility evaluation tool that analyses web pages for accessibility issues.
