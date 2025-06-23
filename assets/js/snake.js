@@ -7,7 +7,7 @@ const eatSound = new Audio('assets/sounds/eating-sound.wav');
 const box = 20;
 const rows = canvas.height / box;
 const cols = canvas.width / box;
-let snake, food, firection, score, game;
+let snake, food, direction, score, game;
 
 function randomFood() {
     return {
@@ -76,9 +76,16 @@ function startGame() {
 function changeDir(e) {
     if (e.key === 'ArrowLeft' && direction !== 'RIGHT') direction = 'LEFT';
     if (e.key === 'ArrowRight' && direction !== 'LEFT') direction = 'RIGHT';
-    if (e.key === 'ArrowUp' && direction !== 'DOWN') direction = 'UP';
-    if (e.key === 'ArrowDown' && direction !== 'UP') direction = 'DOWN';
+    if (e.key === 'ArrowUp' && direction !== 'DOWN') {
+        direction = 'UP';
+        e.preventDefault(); // Prevent default scroll for up arrow
+    }
+    if (e.key === 'ArrowDown' && direction !== 'UP') {
+        direction = 'DOWN';
+        e.preventDefault(); // Prevent default scroll for down arrow
+    }
 }
 
 startBtn.addEventListener('click', startGame);
 document.addEventListener('keydown', changeDir);
+
