@@ -14,7 +14,7 @@ body {
   background-size: cover;
   image-rendering: pixelated;
   font-family: 'Courier New', monospace;
-  color: #A786DF;
+  color: #e632d4;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -63,12 +63,13 @@ p {
     /* Add a pointer on hover */
     font-size: 5rem;
     font-weight: 200;
-    overflow: hidden
+    overflow: hidden;
+    color: #7c12b6;
 }
 
 #game-table {
     background-color: #0f0e17;
-    /* background-color: #000044; */
+    /* background-color: #32014d; */
     padding: 10px;
     border-radius: 10px;
     /* min-height: 400px; */
