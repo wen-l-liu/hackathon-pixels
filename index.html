@@ -11,37 +11,37 @@
 </head>
 
 <body>
-  <div class="page-wrapper"> <!-- Needed this to help bg image fit well throughout webpage -->
-    <div class="starry-bg" id="stars"></div>
-    <div class="starry-bg">
-  <div class="floating-stars">
+    <div class="page-wrapper"> <!-- Needed this to help bg image fit well throughout webpage -->
+        <div class="starry-bg" id="stars"></div>
+        <div class="starry-bg">
+            <div class="floating-stars">
 
 
-    <!-- loads of .star elements -->
-    <div class="star" style="top: 10%; left: 20%;"></div>
-    <div class="star" style="top: 30%; left: 70%;"></div>
-    <div class="star" style="top: 50%; left: 40%;"></div>
-    
-  </div>
-</div>
-<div class="star" style="top: 10%; left: 20%; animation-duration: 2.5s;"></div>
-<div class="star" style="top: 30%; left: 70%; animation-duration: 3.2s;"></div>
+                <!-- loads of .star elements -->
+                <div class="star" style="top: 10%; left: 20%;"></div>
+                <div class="star" style="top: 30%; left: 70%;"></div>
+                <div class="star" style="top: 50%; left: 40%;"></div>
 
-    <header>
-        <h1 class="main-title">🎮The Arcadean</h1>
-        <p class="tagline">Subtitle</p>
-    </header>
-
-    <!-- Need to find images for the games listed inside main (3/4) -->
-    <main class="game-grid">
-        <div class="game-card" onclick="window.location.href='snake.html'">
-            <img src="" alt="">
-            <h2>🐍 Snake Game </h2>
+            </div>
         </div>
-       
+        <div class="star" style="top: 10%; left: 20%; animation-duration: 2.5s;"></div>
+        <div class="star" style="top: 30%; left: 70%; animation-duration: 3.2s;"></div>
+
+        <header>
+            <h1 class="main-title">🎮The Arcadean</h1>
+            <p class="tagline">Subtitle</p>
+        </header>
+
+        <!-- Need to find images for the games listed inside main (3/4) -->
+        <main class="game-grid">
+            <div class="game-card" onclick="window.location.href='snake.html'">
+                <img src="" alt="">
+                <h2>🐍 Snake Game </h2>
+            </div>
+
             <div class="game-card" onclick="window.location.href='blackjack.html'">
                 <img src="" alt="">
-            <h2>🂡BlackJack</h2>
+                <h2>🂡BlackJack</h2>
             </div>
 
             <div class="game-card" onclick="window.location.href='whackamole.html'">
@@ -49,47 +49,46 @@
                 <h2>🐹Whack-a-Mole</h2>
             </div>
 
-            <div class="game-card coming-soon">
+            <div class="game-card" onclick="window.location.href='memory-game.html'">
                 <img src="" alt="">
                 <h2>🃏Memory Match</h2>
-                <p>Coming Soon</p>
             </div>
-    </main>
+        </main>
 
-    <footer>
-        <p>Made with care and love by the top 3 <strong>GAMERS</strong> in the world!</p>
-    </footer>
-    <script>
+        <footer>
+            <p>Made with care and love by the top 3 <strong>GAMERS</strong> in the world!</p>
+        </footer>
+        <script>
 
-        // Generated using AI
+            // Generated using AI
 
-        const starContainer = document.getElementById('stars');
+            const starContainer = document.getElementById('stars');
 
-        // 🌟 Generate 60 twinkling stars
-        for (let i = 0; i < 60; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.top = `${Math.random() * 100}vh`;
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.animationDuration = `${1 + Math.random() * 2}s`;
-            starContainer.appendChild(star);
-        }
+            // 🌟 Generate 60 twinkling stars
+            for (let i = 0; i < 60; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.animationDuration = `${1 + Math.random() * 2}s`;
+                starContainer.appendChild(star);
+            }
 
-        // 🌠 Shooting stars every few seconds
-        setInterval(() => {
-            const shootingStar = document.createElement('div');
-            shootingStar.classList.add('shooting-star');
-            shootingStar.style.left = `${Math.random() * 100}vh`;
-            shootingStar.style.top = `-${Math.random() * 500}px`;
+            // 🌠 Shooting stars every few seconds
+            setInterval(() => {
+                const shootingStar = document.createElement('div');
+                shootingStar.classList.add('shooting-star');
+                shootingStar.style.left = `${Math.random() * 100}vh`;
+                shootingStar.style.top = `-${Math.random() * 500}px`;
 
-            starContainer.appendChild(shootingStar);
+                starContainer.appendChild(shootingStar);
 
-            // remove after animation
-            setTimeout(() => {
-                shootingStar.remove();
-            }, 3000);
-        }, 4000); // every 4 seconds
-    </script>
+                // remove after animation
+                setTimeout(() => {
+                    shootingStar.remove();
+                }, 3000);
+            }, 4000); // every 4 seconds
+        </script>
     </div>
 </body>
 

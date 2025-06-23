@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-        justify-items: center;
+    justify-items: center;
     align-items: center;
     font-family: "Jersey 10", sans-serif;
 }
@@ -11,7 +11,7 @@ body {
     height: 100vh;
     /* display: flex; */
     background: #060AB2;
-     overflow: hidden;
+    overflow: hidden;
     /* changed bg */
     background: url(../images/background.png) no-repeat center center fixed;
     background-size: cover;
@@ -188,7 +188,7 @@ h1 {
             0px 64px);
 }
 
-a{
+a {
     display: block;
     text-align: center;
     margin-left: auto;
