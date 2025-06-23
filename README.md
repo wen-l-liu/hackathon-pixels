@@ -2,7 +2,7 @@
 ![Preview of Website](assets/documentation/------------)
 
 # Introduction
-The Arcadean is a collection of classic browser games built with HTML, CSS, and JavaScript. The site is designed to provide users with fun, interactive options to cure boredom, all within a visually consistent and easy-to-navigate interface. There is no backend functionality—everything runs client-side for instant play.
+The Arcadean is a collection of classic browser games built with HTML, CSS, and JavaScript. The site is designed to provide users with fun, interactive options to cure boredom, all within a visually consistent and easy-to-navigate interface. There is no backend functionality, everything runs client-side for instant play.
 
 ## [Link to Live Website](https://wen-l-liu.github.io/hackathon-pixels/)
 
@@ -36,7 +36,7 @@ This project aims to deliver a simple, accessible arcade of mini-games for users
 - Provide a selection of classic games (Memory Match, Snake, Blackjack, Whack-a-Mole) in one place.
 - Ensure a consistent visual theme and navigation across all games.
 - Make the site fully responsive and accessible.
-- Use only HTML, CSS, and JavaScript—no backend required.
+- Use only HTML, CSS, and JavaScript-no backend required.
 - Optimize for fast loading and smooth gameplay.
 
 ## UX Design
@@ -52,10 +52,11 @@ This project aims to deliver a simple, accessible arcade of mini-games for users
 ### Colour Palette
 
 ![Colour Palette](assets/documentation/pixel-palette.png)
+
 A playful, retro-inspired palette was chosen to evoke classic arcade vibes while maintaining readability and accessibility.
 
 ### Fonts
-
+![Jersey 10 (Google Fonts)](assets/documentation/fonts.png)
 - **Main Font:** Jersey 10 (Google Fonts) for a pixel-art, arcade feel.
 - **Fallback:** Arial, sans-serif for compatibility.
 
