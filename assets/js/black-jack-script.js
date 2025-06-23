@@ -28,7 +28,7 @@ let welcomeMessage = document.getElementById("welcome")
 
 hitBtn.disabled = true;
 standBtn.disabled = true;
-resetBtn.addEventListener("click", reset);
+// resetBtn.addEventListener("click", reset);
 
 function dealCard() {
     welcomeMessage.style.display = "none"; // Hide welcome message when dealing cards
@@ -42,7 +42,8 @@ function dealCard() {
 
 function buildDeck() {
     let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-    let types = ['&#9824;', '&#9827;', '&#9829;', '&#9670;']; // Spades, Clubs, Hearts, Diamonds
+    // let values = ["A", "2", "3", "4", "5"];
+    let types = ['♠', '♣', '♥', '♦']; // Spades, Clubs, Hearts, Diamonds
     // let types = ["C", "D", "H", "S"];
     deck = [];
 
@@ -51,7 +52,6 @@ function buildDeck() {
             deck.push(value + " " + type); //A-C -> K-C, A-D -> K-D
         }
     }
-    // console.log(deck);
 }
 
 
@@ -62,7 +62,6 @@ function shuffleDeck() {
         card = deck[i];
         deck[i] = tempCard; // Swap the card with a random card
     }
-    // console.log(deck);
 
 }
 
@@ -71,31 +70,29 @@ function startGame() {
     hiddenCard = deck.pop();
     dealerSum += getValue(hiddenCard);
     dealerAceCount += checkAce(hiddenCard);
-    console.log('hidden', hiddenCard);
+    // console.log('hidden', hiddenCard);
 
     // Display dealer's sencond card
     let cardDealt = document.createElement("span");
     let card = deck.pop();
     cardDealt.innerHTML = card; // Display the card
-    // console.log('card', card);
+    getSuit(cardDealt); // Add suit color class
     dealerSum += getValue(card);
     // dealerScore.innerHTML = dealerSum; // Update dealer score----------------------comment out
     dealerAceCount += checkAce(card);
     dealerCards.append(cardDealt);
 
-    // console.log('dealerSum', dealerSum);
-
     for (let i = 0; i < 2; i++) {
         let cardDealt = document.createElement("span");
         let card = deck.pop();
         cardDealt.innerHTML = card;
+        getSuit(cardDealt); // Add suit color class
         playerSum += getValue(card);
         playerScore.innerHTML = `You have ${playerSum}`; // Update player score
         playerAceCount += checkAce(card);
         playerCards.append(cardDealt);
     }
 
-    // console.log('playerSum',playerSum);
     hitBtn.disabled = false;
     standBtn.disabled = false;
     hitBtn.addEventListener("click", hit);
@@ -109,7 +106,6 @@ function startGame() {
 
 function getValue(card) {
     let data = card.split(" "); // "4-C" -> ["4", "C"]
-    // console.log('value', data);
     let value = data[0];
 
     if (isNaN(value)) { //A J Q K
@@ -143,13 +139,12 @@ function hit() {
     }
     let cardDealt = document.createElement("span");
     let card = deck.pop();
-    console.log("card", card);
     cardDealt.innerHTML = card; // Display the card
+    getSuit(cardDealt); // Add suit color class
     playerSum += getValue(card);
-    console.log('playerSum', playerSum);
     playerAceCount += checkAce(card);
-    console.log('playerAceCount', playerAceCount);
     playerCards.append(cardDealt);
+    cardCount = playerCards.childElementCount;  // Count the number of cards dealt to the player
     if (reduceAce(playerSum, playerAceCount) >= 21) { //A, J, 8 -> 1 + 10 + 8
         canHit = false;
         stand();
@@ -161,42 +156,32 @@ function hit() {
     } else {
         playerScore.innerHTML = `You have ${playerSum}`; // Update player score
     }
-    cardCount = playerCards.childElementCount;
     console.log('cardCount', cardCount);
 }
 
 function stand() {
-    //dealer plays if value is less than 17
-    while (dealerSum < 17) {
-        let cardDealt = document.createElement("span");
-        let card = deck.pop();
-        cardDealt.innerHTML = card; // Display the card
-        console.log('card', card);
-        dealerSum += getValue(card);
-        dealerAceCount += checkAce(card);
-        document.getElementById('dealer-cards').append(cardDealt);
+    playerSum = reduceAce(playerSum, playerAceCount);
+    if (cardCount != 5 && playerSum <= 21) {
+        dealerPlays(); // Dealer plays after player stands, but does not play if player has 5 card charlie
     }
     dealerSum = reduceAce(dealerSum, dealerAceCount);
-    playerSum = reduceAce(playerSum, playerAceCount);
-
     canHit = false;
     document.getElementById("hidden").classList.remove("card-design"); // Remove the hidden card design
     document.getElementById("hidden").innerHTML = hiddenCard;
-
     let message = "";
     if (playerSum > 21) {
         message = "BUST! You Lose!";
     }
-    //both you and dealer <= 21
-    else if (cardCount == 5){
-        message = "5 Card Charlie! You Win!";
-    }
-    else if (playerSum == dealerSum) {
-        message = "Tie!";
-    }
     else if (playerSum == 21 && cardCount == 2) { // Player has blackjack with two cards
         console.log(cardCount)
         message = "Blackjack! You Win!";
+    }
+    //both you and dealer <= 21
+    else if (playerSum == dealerSum) {
+        message = "Tie!";
+    }
+    else if (cardCount == 5) {
+        message = "5 Card Charlie! You Win!";
     }
     else if (dealerSum > 21) {
         message = "You win!";
@@ -207,7 +192,6 @@ function stand() {
     else if (playerSum < dealerSum) {
         message = "You Lose!";
     }
-
     dealerScore.innerHTML = `Dealer has ${dealerSum}`;
     playerScore.innerHTML = `You have ${playerSum}`;
     document.getElementById("message").innerHTML = message;
@@ -217,6 +201,7 @@ function stand() {
 }
 
 function reset() {
+
     playerCards.innerHTML = ""; // Clear player cards
     dealerCards.innerHTML = ""; // resets dealer cards
     document.getElementById("message").innerHTML = ""; // Clear message"";
@@ -234,7 +219,22 @@ function reset() {
 }
 
 function getSuit(card) {
-    if (card.includes("♠")) {
-        return "Spades";
+    if (card.innerHTML.includes("♦") || card.innerHTML.includes("♥")) {
+        card.classList.add("red-card");
+    }
+}
+
+function dealerPlays() {
+    let dealerCards = document.getElementById("dealer-cards");
+    let dealerCardCount = dealerCards.childElementCount; // Count the number of cards dealt to the dealer
+    //dealer plays if value is less than 17
+    while (dealerSum < 17 && dealerCardCount <= 5) {
+        let cardDealt = document.createElement("span");
+        let card = deck.pop();
+        cardDealt.innerHTML = card; // Display the card
+        getSuit(cardDealt); // Add suit color class
+        dealerSum += getValue(card);
+        dealerAceCount += checkAce(card);
+        dealerCards.append(cardDealt);
     }
 }
