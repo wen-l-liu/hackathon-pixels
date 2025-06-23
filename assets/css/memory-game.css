@@ -56,7 +56,8 @@ body {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #5c0f80;
+    /* background: #5c0f80; */
+    background: #50047c;
     backface-visibility: hidden;
 }
 
