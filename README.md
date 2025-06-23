@@ -130,6 +130,29 @@ To deploy updates:
 ### JavaScript Validation
 - [jshint](https://jshint.com/) used to check for code quality and errors.
 
+![Home Page)](assets/documentation/jshint-home.png)
+
+<details>
+<summary>Black Jack Page</summary>
+
+![Black Jack](assets/documentation/jshint-blackjack.png)
+
+</details>
+<details>
+<summary>Snake Page</summary>
+
+![Snake](assets/documentation/jshint-snake.png)
+
+</details>
+<details>
+<summary>Whack-a-mole</summary>
+
+![Whack-a-mole](assets/documentation/jshint-mole.png)
+
+</details>
+
+Code was validated and updated to resolve contrast issues found.
+
 ### Wave-tool Validation
 Wave-tool Validation is an accessibility evaluation tool that analyses web pages for accessibility issues.
 It checks for problems such as missing alt text, low color contrast, improper heading structure, and other barriers that may affect users with disabilities.The tool helps to improve the accessibility and usability of the website.
