@@ -264,15 +264,15 @@ p {
 #message {
     display: block;
     align-content: center;
-    /* color: white; */
+
     color: #ffee00;
     font-size: 4rem;
-    /* font-weight: bold; */
+
     text-align: center;
-    /* background-color:; */
+
     width: 60%;
     min-height: 70px;
-    /* background-color: rgb(160, 236, 130); */
+
 }
 
 .score {
