@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whack-A-Mole!</title>
+  <title>Whack-a-Mole!</title>
   <link rel="stylesheet" href="assets/css/whack-a-mole.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-  <!-- Start Screen -->
-  <div id="start-screen">
+  <div class="starry-bg" id="stars"></div>
+  <h1>🐹 Whack-a-Mole</h1>
+  <div class="game-wrapper">
     <button id="startBtn">Start Game</button>
-  </div>
-
-  <!-- Game Screen -->
-  <div id="game-screen">
-    <h1 class="score">SCORE: <span>00</span></h1>
     <div class="board">
       <div class="hole"></div>
       <div class="hole"></div>
@@ -28,21 +25,33 @@
       <div class="hole"></div>
       <div class="hole"></div>
     </div>
+    <p id="scoreDisplay">Score: <span id="score">0</span></p>
     <button id="reset-btn">Reset Score</button>
+    <a class="back" href="index.html">⬅ Back to Arcade Menu</a>
     <div class="cursor"></div>
   </div>
 
   <script src="assets/js/whack-a-mole.js"></script>
   <script>
-    const startBtn = document.getElementById('startBtn');
-    const startScreen = document.getElementById('start-screen');
-    const gameScreen = document.getElementById('game-screen');
+    const starContainer = document.getElementById('stars');
+    for (let i = 0; i < 60; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      starContainer.appendChild(star);
+    }
 
-    startBtn.addEventListener('click', () => {
-      startScreen.style.display = 'none';
-      gameScreen.style.display = 'flex';
-    });
+    setInterval(() => {
+      const shootingStar = document.createElement('div');
+      shootingStar.classList.add('shooting-star');
+      shootingStar.style.left = `${Math.random() * 100}vh`;
+      shootingStar.style.top = `-${Math.random() * 500}px`;
+      starContainer.appendChild(shootingStar);
+      setTimeout(() => shootingStar.remove(), 3000);
+    }, 4000);
   </script>
-
 </body>
+
 </html>
