@@ -128,9 +128,34 @@ To deploy updates:
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) used to ensure valid CSS.
 
 ### JavaScript Validation
-- [ESLint](https://eslint.org/) used to check for code quality and errors.
+- [Python Tutor](https://pythontutor.com/javascript.html) used to check for code quality and errors.
 
-All code was validated and updated to resolve any issues found.
+### Wave-tool Validation
+Wave-tool Validation is an accessibility evaluation tool that analyses web pages for accessibility issues.
+It checks for problems such as missing alt text, low color contrast, improper heading structure, and other barriers that may affect users with disabilities.The tool helps to improve the accessibility and usability of the website.
+
+![Home Page)](assets/documentation/wave-home.jpg)
+
+<details>
+<summary>Black Jack Page</summary>
+
+![Black Jack](assets/documentation/wave-blackjack.jpg)
+
+</details>
+<details>
+<summary>Snake Page</summary>
+
+![Snake](assets/documentation/wave-snake.jpg)
+
+</details>
+<details>
+<summary>Whack-a-mole</summary>
+
+![Whack-a-mole](assets/documentation/wave-mole.jpg)
+
+</details>
+
+Code was validated and updated to resolve contrast issues found.
 
 ## References
 - [MDN Web Docs](https://developer.mozilla.org/) for HTML, CSS, and JavaScript documentation.
