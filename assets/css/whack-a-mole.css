@@ -1,40 +1,67 @@
-/* CSS */
-* {
+body {
+  background: url(../images/background.png) no-repeat center center fixed;
+  background-size: cover;
+  image-rendering: pixelated;
+  font-family: 'Courier New', monospace;
+  color: #A786DF;
+  text-align: center;
   margin: 0;
   padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  font-family: 'Pixelify Sans', sans-serif;
-  background-image: url(https://preview.redd.it/icko709zs5c41.png?width=320&crop=smart&auto=webp&s=07386f8b9b757e9361a6d387f4063054feab5985);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 
-.score {
-  text-align: center;
-  font-size: 4em;
-  margin-bottom: .5em;
+h1 {
+  color: #ffee00;
+  text-shadow: 0 0 5px #ffee00, 0 0 10px #E53170;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 1rem;
+}
+
+#startBtn,
+#reset-btn {
+  padding: 10px 20px;
+  background: #F25F4C;
+  color: #0F0E17;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #F25F4C;
+  font-size: 1rem;
+  max-width: 300px;
+  width: 100%;
+  font-family: 'VT323', monospace;
+  text-transform: uppercase;
+}
+
+#startBtn:hover,
+#reset-btn:hover {
+  background-color: #D84339;
 }
 
 .board {
-  width: 90vw;
-  height: 90vw;
+  width: 90vmin;
+  height: 90vmin;
   max-width: 500px;
   max-height: 500px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 10%;
-  margin: 0 auto;
+  background: #111;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ffee00;
 }
 
 .hole {
@@ -48,92 +75,96 @@ body {
 }
 
 .hole .mole {
-  width: 70%;
+  width: 90%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  animation: rise .3s ease-out;
+  animation: rise 0.3s ease-out;
 }
 
 @keyframes rise {
-  0% {
-    transform: translateX(-50%) translateY(100%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
+  0% { transform: translateX(-50%) translateY(100%); }
+  100% { transform: translateX(-50%) translateY(0); }
 }
 
 .cursor {
-  height: 110px;
+  height: 100px;
   width: 100px;
   position: absolute;
   top: 100px;
   left: 100px;
-  background-image: url(HAMMER);
+  background-image: url('../images/hammer.png'); /* Make sure this image exists */
   background-size: 100% 100%;
   transform: translate(-20%, -20%);
-  transition: transform .1s;
+  transition: transform 0.1s;
   pointer-events: none;
+  z-index: 10;
 }
 
 .cursor.active {
   transform: translate(-20%, -20%) rotate(-45deg);
 }
 
-#reset-btn {
-  background-color: #FFD700;
-  color: #362D2C;
-  padding: 15px 30px;
-  border: 3px solid #B8860B;
-  border-radius: 10px;
-  font-family: 'Pixelify Sans', sans-serif;
-  font-size: 1.8em;
-  cursor: pointer;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease-in-out;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+#scoreDisplay {
+  margin-top: 15px;
+  color: #E53170;
+  font-size: 1.2rem;
+  font-family: 'VT323', monospace;
 }
 
-#reset-btn:hover {
-  background-color: #DAA520;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
-}
-
-#reset-btn:active {
-  background-color: #B8860B;
-  transform: translateY(0);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-}
-
-/* Add Start Button Styling */
-#start-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-#startBtn {
-  padding: 10px 20px;
-  background: #F25F4C;
-  color: #0F0E17;
+.back {
+  margin-top: 10px;
+  color: #ffee00;
+  text-decoration: none;
   font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #F25F4C;
+  font-family: 'VT323', monospace;
 }
 
-#game-screen {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.starry-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffee00;
+  animation: twinkle 2s infinite ease-in-out;
+  opacity: 0.9;
+  border-radius: 50%;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, #F25F4C, transparent);
+  animation: shoot 3s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(-250%) translateY(0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200vw) translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
 }

@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    <!-- div class to select stars in css for bg -->
+    <div class="starry-bg" id="stars"></div>
     <h1>Blackjack</h1>
     <div id="game-table" class="pixel-corners">
         <!-- <div class="card-area"> -->
@@ -43,9 +45,41 @@
             <!-- <button id="btn-reset">Reset</button> -->
         </div>
     </div>
-    <!-- Added a href to go back to arcade main by Zaenb -->
+    <!-- Added a href to go back to arcade main -->
     <a href="index.html">⬅ Back to Arcade Menu</a>
+
+    
     <script src="assets/js/black-jack-script.js"></script>
+    <script>
+        // Generated using AI
+
+        const starContainer = document.getElementById('stars');
+
+        // 🌟 Generate 60 twinkling stars
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${1 + Math.random() * 2}s`;
+            starContainer.appendChild(star);
+        }
+
+        // 🌠 Shooting stars every few seconds
+        setInterval(() => {
+            const shootingStar = document.createElement('div');
+            shootingStar.classList.add('shooting-star');
+            shootingStar.style.left = `${Math.random() * 100}vh`;
+            shootingStar.style.top = `-${Math.random() * 500}px`;
+
+            starContainer.appendChild(shootingStar);
+
+            // remove after animation
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 3000);
+        }, 4000); // every 4 seconds
+    </script>
 </body>
 
 </html>
