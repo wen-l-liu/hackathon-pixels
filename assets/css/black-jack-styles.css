@@ -12,6 +12,7 @@ body {
     /* changed bg */
     background: url(../images/background.png) no-repeat center center fixed;
     background-size: cover;
+    background-color: #0f0e17;
     image-rendering: pixelated;
     font-family: 'Courier New', monospace;
     color: #e632d4;
@@ -39,6 +40,13 @@ h3,
 p {
     text-align: center;
     margin: 8% 0;
+}
+
+#home-link {
+    background: #1A1A1A;
+    color: #FFEE00;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 #welcome.pixel-corners {
