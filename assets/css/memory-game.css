@@ -10,14 +10,14 @@
 body {
     height: 100vh;
     /* display: flex; */
-    background: #060AB2;
+    background-color: #0f0e17;
     overflow: hidden;
     /* changed bg */
     background: url(../images/background.png) no-repeat center center fixed;
     background-size: cover;
     image-rendering: pixelated;
     font-family: 'Courier New', monospace;
-    color: #A786DF;
+    /* color: #A786DF; */
 }
 
 .memory-game {
@@ -76,6 +76,7 @@ h1 {
     margin-right: auto;
     margin: auto 0;
     color: #ffee00;
+    background-color: #010033;
 }
 
 .pixel-corners {

@@ -150,8 +150,14 @@ To deploy updates:
 ![Whack-a-mole](assets/documentation/jshint-mole.png)
 
 </details>
+<details>
+<summary>Memory Card Match</summary>
 
-Code was validated and updated to resolve contrast issues found.
+![Memory Card Match](assets/documentation/jshint-memory-card.png)
+
+</details>
+
+Code was validated and updated to resolve syntax issues found.
 
 ### Wave-tool Validation
 Wave-tool Validation is an accessibility evaluation tool that analyses web pages for accessibility issues.
@@ -175,6 +181,12 @@ It checks for problems such as missing alt text, low color contrast, improper he
 <summary>Whack-a-mole</summary>
 
 ![Whack-a-mole](assets/documentation/wave-mole.jpg)
+
+</details>
+<details>
+<summary>Memory Card Match</summary>
+
+![Memory Card Match](assets/documentation/wave-memory-card.jpg)
 
 </details>
 
