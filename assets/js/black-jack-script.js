@@ -164,10 +164,12 @@ function stand() {
     if (cardCount != 5 && playerSum <= 21) {
         dealerPlays(); // Dealer plays after player stands, but does not play if player has 5 card charlie
     }
+    let hiddenCardElement = document.getElementById("hidden");
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     canHit = false;
-    document.getElementById("hidden").classList.remove("card-design"); // Remove the hidden card design
-    document.getElementById("hidden").innerHTML = hiddenCard;
+    hiddenCardElement.classList.remove("card-design"); // Remove the hidden card design
+    hiddenCardElement.innerHTML = hiddenCard;
+    getSuit(hiddenCardElement); // Add suit color class to the hidden card
     let message = "";
     if (playerSum > 21) {
         message = "BUST! You Lose!";
@@ -221,6 +223,8 @@ function reset() {
 function getSuit(card) {
     if (card.innerHTML.includes("♦") || card.innerHTML.includes("♥")) {
         card.classList.add("red-card");
+    } else {
+        card.classList.add("black-card");
     }
 }
 

@@ -68,6 +68,7 @@ p {
 
 #game-table {
     background-color: #0f0e17;
+    /* background-color: #000044; */
     padding: 10px;
     border-radius: 10px;
     /* min-height: 400px; */
@@ -233,6 +234,7 @@ p {
 /* card shape and background */
 #player-cards>span,
 #dealer-cards>span {
+
     background: #FFF;
     border: 6px solid #FFF;
     border-radius: 5px;
@@ -262,7 +264,8 @@ p {
 #message {
     display: block;
     align-content: center;
-    color: white;
+    /* color: white; */
+    color: #ffee00;
     font-size: 4rem;
     /* font-weight: bold; */
     text-align: center;
@@ -291,6 +294,9 @@ p {
     color: #ff4747;
 }
 
+.black-card {
+    color: black;
+}
 .controls button {
     font-size: 36px;
     display: inline-block;
